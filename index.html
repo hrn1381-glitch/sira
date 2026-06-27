@@ -3,449 +3,459 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>سیرا - مرکز تماس هوشمند | SIRRA Call Center</title>
-<meta name="description" content="سیرا، نرم‌افزار مرکز تماس هوشمند، کاملاً فارسی و بومی. نسخه رایگان بدون محدودیت زمانی.">
+<title>سیرا — مرکز تماس هوشمند</title>
+<meta name="description" content="سیرا، نرم‌افزار مرکز تماس هوشمند، کاملاً فارسی. نسخه رایگان بدون محدودیت زمانی.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="landing-extra.css">
 </head>
 <body>
 
-<!-- Background Orbs -->
-<div class="bg-orbs">
-  <div class="orb"></div>
-  <div class="orb"></div>
-  <div class="orb"></div>
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-inner">
+    <div class="loader-brand">SIRRA</div>
+    <div class="loader-bar-wrap">
+      <div class="loader-bar" id="loaderBar"></div>
+    </div>
+    <div class="loader-percent" id="loaderPercent">۰٪</div>
+  </div>
 </div>
 
-<!-- Navbar -->
-<nav class="navbar" id="navbar">
-  <div class="container">
-    <a href="#" class="nav-logo">SIRRA</a>
-    <div class="nav-links">
-      <a href="shop.html">فروشگاه</a>
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#" class="header-logo">SIRRA</a>
+    <nav class="header-nav">
       <a href="#features">امکانات</a>
       <a href="#reporting">گزارش‌گیری</a>
-      <a href="#setup">راه‌اندازی</a>
+      <a href="shop.html">فروشگاه</a>
       <a href="#support">پشتیبانی</a>
-      <a href="#pricing">قیمت‌گذاری</a>
-    </div>
-    <div class="nav-actions">
-      <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">🌙</button>
-      <a href="#pricing" class="btn btn-primary">شروع رایگان</a>
+      <a href="#consult" class="nav-cta">مشاوره رایگان</a>
+    </nav>
+    <div class="header-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
       <button class="mobile-toggle" id="mobileToggle" aria-label="منو">
         <span></span><span></span><span></span>
       </button>
     </div>
   </div>
-</nav>
+</header>
 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="shop.html">فروشگاه</a>
   <a href="#features">امکانات</a>
   <a href="#reporting">گزارش‌گیری</a>
-  <a href="#setup">راه‌اندازی</a>
+  <a href="shop.html">فروشگاه</a>
   <a href="#support">پشتیبانی</a>
-  <a href="#pricing">قیمت‌گذاری</a>
+  <a href="#consult" class="nav-cta">مشاوره رایگان</a>
 </div>
 
 <!-- ==================== HERO ==================== -->
-<section class="hero section">
-  <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <div class="hero-badge">
-          <span class="dot"></span>
-          نسخه رایگان بدون محدودیت زمانی
-        </div>
-        <h1>دید کامل بر <span class="highlight">عملکرد اپراتورها</span></h1>
-        <p>نرم‌افزار سیرا، انتخابی هوشمندانه برای سازمان‌های مدرن. از تماس و پیام‌رسانی تا تیکتینگ و گزارش‌گیری، همه‌چیز ساده و سریع طراحی شده است.</p>
-        <div class="hero-buttons">
-          <a href="#pricing" class="btn btn-primary btn-lg">همین حالا راه‌اندازی کنید ←</a>
-          <a href="#consult" class="btn btn-outline btn-lg">مشاوره رایگان</a>
-        </div>
-        <!-- Animated Counters -->
-        <div class="hero-counters">
-          <div class="counter-item">
-            <span class="counter-num" data-target="1500">۰</span>+
-            <span class="counter-lbl">سازمان فعال</span>
-          </div>
-          <div class="counter-item">
-            <span class="counter-num" data-target="98">۰</span>٪
-            <span class="counter-lbl">رضایت مشتری</span>
-          </div>
-          <div class="counter-item">
-            <span class="counter-num" data-target="24">۰</span>/۷
-            <span class="counter-lbl">آپتایم سرویس</span>
-          </div>
-        </div>
-      </div>
-      <div class="hero-visual">
-        <div class="hero-mockup">
-          <div class="floating-card fc1">
-            <div class="fc-icon">📞</div>
-            <div class="fc-num">۱,۲۴۸</div>
-            <div class="fc-lbl">تماس امروز</div>
-          </div>
-          <div class="floating-card fc2">
-            <div class="fc-icon">⚡</div>
-            <div class="fc-num">٪۹۸.۷</div>
-            <div class="fc-lbl">آپتایم سرویس</div>
-          </div>
-          <div class="mockup-window">
-            <div class="mockup-bar">
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-stat-row">
-                <div class="mockup-stat"><div class="num">۳۴۵</div><div class="lbl">تماس فعال</div></div>
-                <div class="mockup-stat"><div class="num">۱۲</div><div class="lbl">اپراتور آنلاین</div></div>
-                <div class="mockup-stat"><div class="num">٪۹۴</div><div class="lbl">رضایت مشتری</div></div>
-              </div>
-              <div class="mockup-chart">
-                <div class="chart-bar" style="--h:40%"></div>
-                <div class="chart-bar" style="--h:65%"></div>
-                <div class="chart-bar" style="--h:45%"></div>
-                <div class="chart-bar" style="--h:80%"></div>
-                <div class="chart-bar" style="--h:55%"></div>
-                <div class="chart-bar" style="--h:70%"></div>
-                <div class="chart-bar" style="--h:90%"></div>
-                <div class="chart-bar" style="--h:60%"></div>
-                <div class="chart-bar" style="--h:75%"></div>
-                <div class="chart-bar" style="--h:50%"></div>
-                <div class="chart-bar" style="--h:85%"></div>
-                <div class="chart-bar" style="--h:68%"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<section class="hero" id="hero">
+  <div class="hero-bg-signal"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow" data-anim="fade-up" data-delay="0.2">
+      <span class="pulse-dot"></span>
+      نسخه رایگان · بدون محدودیت زمانی
+    </div>
+    <h1 class="hero-heading" data-anim="split-words">
+      <span class="hw">مدیریت</span>
+      <span class="hw">هوشمند</span>
+      <span class="hw accent">مرکز تماس</span>
+    </h1>
+    <p class="hero-tagline" data-anim="fade-up" data-delay="0.6">
+      سیرا همان دستیار هوشمندی است که همیشه منتظرش بودید.
+      <br>از تماس و پیام‌رسانی تا تیکتینگ و گزارش‌گیری.
+    </p>
+    <div class="hero-actions" data-anim="fade-up" data-delay="0.8">
+      <a href="#pricing" class="btn-solid">دریافت رایگان ←</a>
+      <a href="#consult" class="btn-ghost">مشاوره رایگان</a>
+    </div>
+  </div>
+  <div class="hero-scroll-hint" data-anim="fade-up" data-delay="1.2">
+    <div class="scroll-line"></div>
+    <span>اسکرول کنید</span>
+  </div>
+</section>
+
+<!-- ==================== STATS MARQUEE ==================== -->
+<section class="marquee-section">
+  <div class="marquee-track">
+    <div class="marquee-content">
+      <span class="marquee-item">کاملاً فارسی و بومی</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">تاریخ شمسی</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">نصب آسان</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">امنیت بالا</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">توسعه‌پذیر</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">بروزرسانی مداوم</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">معماری MVC</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">کاملاً فارسی و بومی</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">تاریخ شمسی</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">نصب آسان</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">امنیت بالا</span>
+      <span class="marquee-dot">◆</span>
+      <span class="marquee-item">توسعه‌پذیر</span>
+      <span class="marquee-dot">◆</span>
     </div>
   </div>
 </section>
 
-<!-- ==================== TRUST STRIP ==================== -->
-<section class="trust-strip">
+<!-- ==================== STATS COUNTER ==================== -->
+<section class="stats-section" id="stats">
   <div class="container">
-    <div class="trust-grid" id="trustGrid"></div>
+    <div class="stats-grid">
+      <div class="stat" data-anim="stagger-up">
+        <span class="stat-number" data-value="1500">0</span>
+        <span class="stat-suffix">+</span>
+        <span class="stat-label">سازمان فعال</span>
+      </div>
+      <div class="stat" data-anim="stagger-up">
+        <span class="stat-number" data-value="98.7">0</span>
+        <span class="stat-suffix">٪</span>
+        <span class="stat-label">آپتایم سرویس</span>
+      </div>
+      <div class="stat" data-anim="stagger-up">
+        <span class="stat-number" data-value="24">0</span>
+        <span class="stat-suffix">/۷</span>
+        <span class="stat-label">پشتیبانی آنلاین</span>
+      </div>
+      <div class="stat" data-anim="stagger-up">
+        <span class="stat-number" data-value="5">0</span>
+        <span class="stat-suffix">دقیقه</span>
+        <span class="stat-label">زمان نصب</span>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ==================== FEATURES ==================== -->
-<section class="section" id="features">
+<section class="section-block" id="features">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">◆ ماژول‌های متنوع و کاربردی</div>
-      <h2 class="section-title">هر آنچه نیاز دارید، یکجا در دسترس</h2>
-      <p class="section-desc">از ابزارهای روزمره گرفته تا ماژول‌های تخصصی، همه در یک پلتفرم گردآوری شده‌اند. به راحتی انتخاب کنید و از امکانات متنوع بهره‌مند شوید.</p>
+    <div class="section-intro" data-anim="clip-reveal">
+      <span class="eyebrow">ماژول‌های متنوع</span>
+      <h2 class="section-heading">هر آنچه نیاز دارید، یکجا</h2>
+      <p class="section-body">از ابزارهای روزمره گرفته تا ماژول‌های تخصصی، همه در یک پلتفرم.</p>
     </div>
-    <div class="features-grid" id="featuresGrid"></div>
-  </div>
-</section>
-
-<!-- ==================== REPORTING (NEW) ==================== -->
-<section class="section" id="reporting" style="background:var(--bg-secondary)">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">◆ گزارش‌گیری پیشرفته</div>
-      <h2 class="section-title">گزارش‌های جامع و تحلیلی از تماس‌ها و اپراتورها</h2>
-      <p class="section-desc">مدیریت هوشمند و کارآمد در خدمت تصمیم‌گیری دقیق مدیران</p>
-    </div>
-    <div class="reporting-grid reveal">
-      <div class="reporting-cards">
-        <div class="reporting-card">
-          <div class="reporting-icon">📋</div>
-          <h4>گزارش کامل تماس‌ها</h4>
-          <p>مشاهده تماس‌های ورودی، خروجی و از دست‌رفته با جزئیات کامل.</p>
-        </div>
-        <div class="reporting-card">
-          <div class="reporting-icon">🔍</div>
-          <h4>جستجوی هوشمند</h4>
-          <p>فیلتر و جستجو بر اساس شماره، داخلی، صف یا تاریخ تماس.</p>
-        </div>
-        <div class="reporting-card">
-          <div class="reporting-icon">📅</div>
-          <h4>تقویم و تاریخ شمسی</h4>
-          <p>گزارش‌ها با تاریخ شمسی و تفکیک روزانه، هفتگی و ماهانه.</p>
-        </div>
-        <div class="reporting-card">
-          <div class="reporting-icon">👤</div>
-          <h4>تحلیل عملکرد اپراتورها</h4>
-          <p>ارزیابی میزان پاسخگویی، زمان مکالمه و کیفیت خدمات.</p>
-        </div>
-        <div class="reporting-card">
-          <div class="reporting-icon">📥</div>
-          <h4>خروجی متنوع</h4>
-          <p>دریافت گزارش‌ها در قالب Excel و PDF.</p>
-        </div>
-        <div class="reporting-card">
-          <div class="reporting-icon">📡</div>
-          <h4>نمایش زنده داده‌ها</h4>
-          <p>نمایش لحظه‌ای وضعیت تماس‌ها و آمار در داشبورد مدیریتی.</p>
-        </div>
+    <div class="features-mosaic">
+      <div class="feature-tile feature-tile--large" data-anim="slide-right">
+        <div class="feature-tile__icon">📊</div>
+        <h3>داشبورد زنده</h3>
+        <p>مانیتورینگ لحظه‌ای تماس‌ها، صف‌ها و عملکرد اپراتورها با نمودارهای تعاملی.</p>
+      </div>
+      <div class="feature-tile" data-anim="fade-up">
+        <div class="feature-tile__icon">👥</div>
+        <h3>مدیریت اپراتورها</h3>
+        <p>ارزیابی عملکرد، تخصیص خودکار تماس و نظارت بر کیفیت مکالمات.</p>
+      </div>
+      <div class="feature-tile" data-anim="fade-up">
+        <div class="feature-tile__icon">🔐</div>
+        <h3>امنیت پیشرفته</h3>
+        <p>احراز هویت چندلایه، مدیریت سطوح دسترسی و رمزنگاری.</p>
+      </div>
+      <div class="feature-tile" data-anim="slide-left">
+        <div class="feature-tile__icon">📅</div>
+        <h3>تاریخ شمسی</h3>
+        <p>پشتیبانی کامل از تاریخ شمسی و استانداردهای بومی.</p>
+      </div>
+      <div class="feature-tile feature-tile--large" data-anim="slide-left">
+        <div class="feature-tile__icon">🧩</div>
+        <h3>ماژول‌های کاربردی</h3>
+        <p>گزارش‌گیری، مدیریت صف، ضبط مکالمات، نظرسنجی و بسیاری دیگر در یک پلتفرم یکپارچه.</p>
+      </div>
+      <div class="feature-tile" data-anim="scale-up">
+        <div class="feature-tile__icon">⚙️</div>
+        <h3>معماری استاندارد</h3>
+        <p>ساختار MVC تمیز با توسعه‌پذیری و سفارشی‌سازی بالا.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== UX / SIMPLE EXPERIENCE ==================== -->
-<section class="section" id="experience">
+<!-- ==================== BIG TEXT DIVIDER ==================== -->
+<section class="big-text-divider">
+  <div class="big-text" data-anim="marquee-scroll">دید کامل بر عملکرد اپراتورها</div>
+</section>
+
+<!-- ==================== REPORTING ==================== -->
+<section class="section-block section-block--alt" id="reporting">
   <div class="container">
-    <div class="ux-split reveal">
-      <div class="ux-content">
-        <div class="section-label">◆ تجربه‌ای ساده و روان</div>
-        <h2 class="section-title" style="text-align:right">کاربری آسان برای همه</h2>
-        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:24px">رابط کاربری طراحی‌شده بر اساس سادگی و راحتی، به شما کمک می‌کند تا بدون پیچیدگی به تمام امکانات دسترسی داشته باشید. تنها با چند کلیک به نتیجه برسید.</p>
-        <p style="color:var(--text-secondary);line-height:1.9">سیرا با تمام سافت‌فون‌ها و آی‌پی‌فون‌های استاندارد سازگار است و از پروتکل‌های بین‌المللی پشتیبانی می‌کند. چه در داخل شبکه سازمان باشید و چه خارج از آن، ارتباطی پایدار، امن و بدون محدودیت.</p>
+    <div class="reporting-layout">
+      <div class="reporting-info" data-anim="slide-right">
+        <span class="eyebrow">گزارش‌گیری پیشرفته</span>
+        <h2 class="section-heading">گزارش‌های جامع و تحلیلی</h2>
+        <p class="section-body">به‌سادگی جزئیات تمامی تماس‌های ورودی، خروجی و از دست‌رفته را بررسی کنید. بدانید هر تماس چه زمانی برقرار شده، توسط کدام اپراتور پاسخ داده شده و چه مدتی طول انجامیده.</p>
+        <ul class="check-list">
+          <li>گزارش کامل تماس‌ها با جزئیات دقیق</li>
+          <li>جستجوی هوشمند بر اساس شماره، داخلی و تاریخ</li>
+          <li>تقویم شمسی با تفکیک روزانه، هفتگی و ماهانه</li>
+          <li>تحلیل عملکرد هر اپراتور</li>
+          <li>خروجی Excel و PDF</li>
+          <li>داشبورد مدیریتی لحظه‌ای</li>
+        </ul>
       </div>
-      <div class="ux-features">
-        <div class="ux-item"><span class="ux-check">✓</span> نصب آسان و بی‌دردسر</div>
-        <div class="ux-item"><span class="ux-check">✓</span> تنها در چند دقیقه آماده استفاده</div>
-        <div class="ux-item"><span class="ux-check">✓</span> بدون نیاز به دانش فنی پیچیده</div>
-        <div class="ux-item"><span class="ux-check">✓</span> سازگار با تمام دستگاه‌ها</div>
-        <div class="ux-item"><span class="ux-check">✓</span> ارتباط بدون مرز، هر جا که باشید</div>
+      <div class="reporting-visual" data-anim="scale-up">
+        <div class="mock-dashboard">
+          <div class="mock-row">
+            <div class="mock-metric"><span class="mock-val">۲,۴۵۶</span><span class="mock-lbl">تماس هفته</span></div>
+            <div class="mock-metric"><span class="mock-val">۲۳<small>ث</small></span><span class="mock-lbl">میانگین پاسخ</span></div>
+          </div>
+          <div class="mock-row">
+            <div class="mock-metric"><span class="mock-val">٪۹۶</span><span class="mock-lbl">نرخ موفقیت</span></div>
+            <div class="mock-metric"><span class="mock-val">۱۸</span><span class="mock-lbl">اپراتور فعال</span></div>
+          </div>
+          <div class="mock-chart">
+            <div class="mc-bar" style="--h:40%"></div>
+            <div class="mc-bar" style="--h:65%"></div>
+            <div class="mc-bar" style="--h:45%"></div>
+            <div class="mc-bar" style="--h:80%"></div>
+            <div class="mc-bar" style="--h:55%"></div>
+            <div class="mc-bar" style="--h:70%"></div>
+            <div class="mc-bar" style="--h:90%"></div>
+            <div class="mc-bar" style="--h:60%"></div>
+            <div class="mc-bar" style="--h:75%"></div>
+            <div class="mc-bar" style="--h:85%"></div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ==================== SETUP STEPS ==================== -->
-<section class="section" id="setup" style="background:var(--bg-secondary)">
+<section class="section-block" id="setup">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">◆ نصب آسان و بی‌دردسر</div>
-      <h2 class="section-title">تنها در چند دقیقه آماده استفاده شوید</h2>
-      <p class="section-desc">فرآیند نصب به‌گونه‌ای طراحی شده که بدون نیاز به دانش فنی پیچیده، در کمترین زمان قابل اجراست.</p>
+    <div class="section-intro" data-anim="fade-up">
+      <span class="eyebrow">نصب آسان</span>
+      <h2 class="section-heading">تنها در چند دقیقه آماده شوید</h2>
+      <p class="section-body">بدون نیاز به دانش فنی پیچیده. مراحل ساده را دنبال کنید.</p>
     </div>
-    <div class="steps-grid" id="stepsGrid"></div>
+    <div class="steps-timeline">
+      <div class="step-item" data-anim="slide-right">
+        <div class="step-marker">۱</div>
+        <div class="step-content">
+          <h4>دریافت لایسنس</h4>
+          <p>تهیه سریع لایسنس رایگان یا حرفه‌ای از سایت سیرا.</p>
+        </div>
+      </div>
+      <div class="step-item" data-anim="slide-left">
+        <div class="step-marker">۲</div>
+        <div class="step-content">
+          <h4>نصب روی سرور</h4>
+          <p>نصب آسان و سریع با مستندات کامل فارسی.</p>
+        </div>
+      </div>
+      <div class="step-item" data-anim="slide-right">
+        <div class="step-marker">۳</div>
+        <div class="step-content">
+          <h4>پیکربندی اولیه</h4>
+          <p>تنظیمات ساده و محیط کاربری فارسی آماده استفاده.</p>
+        </div>
+      </div>
+      <div class="step-item" data-anim="slide-left">
+        <div class="step-marker">۴</div>
+        <div class="step-content">
+          <h4>شروع کار</h4>
+          <p>مرکز تماس شما آماده‌است. تماس‌ها را مدیریت کنید!</p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ==================== SUPPORT ==================== -->
-<section class="section" id="support">
+<section class="section-block section-block--alt" id="support">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">◆ پشتیبانی</div>
-      <h2 class="section-title">ارتباطی سریع و بدون محدودیت</h2>
-      <p class="section-desc">همیشه در کنار شما هستیم، از هر راهی که راحت‌تر هستید.</p>
+    <div class="section-intro" data-anim="clip-reveal">
+      <span class="eyebrow">پشتیبانی</span>
+      <h2 class="section-heading">ارتباطی سریع و بدون محدودیت</h2>
+      <p class="section-body">همیشه در کنار شما هستیم، از هر راهی که راحت‌تر هستید.</p>
     </div>
-    <div class="support-grid-real reveal">
-      <div class="support-card-real">
-        <div class="support-icon">📞</div>
+    <div class="support-channels">
+      <a href="tel:02167241000" class="channel-card" data-anim="slide-right">
+        <div class="channel-icon">📞</div>
         <h4>تماس مستقیم</h4>
-        <div class="support-phone">۰۲۱۶۷۲۴۱۰۰۰</div>
-        <p>ارتباط سریع با واحد پشتیبانی از طریق تماس تلفنی</p>
-        <a href="tel:02167241000" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:12px">تماس بگیرید</a>
-      </div>
-      <div class="support-card-real">
-        <div class="support-icon">💬</div>
+        <span class="channel-value" dir="ltr">021-6724-1000</span>
+        <p>ارتباط سریع با واحد پشتیبانی</p>
+        <span class="channel-action">تماس بگیرید →</span>
+      </a>
+      <a href="#" class="channel-card" data-anim="fade-up">
+        <div class="channel-icon">💬</div>
         <h4>واتساپ</h4>
-        <div class="support-phone">۰۲۱۶۷۲۴۱۰۰۰</div>
-        <p>ارسال پیام و دریافت پاسخ فوری در واتساپ</p>
-        <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:12px">ارسال پیام</a>
-      </div>
-      <div class="support-card-real">
-        <div class="support-icon">🎫</div>
+        <span class="channel-value" dir="ltr">021-6724-1000</span>
+        <p>دریافت پاسخ فوری در واتساپ</p>
+        <span class="channel-action">ارسال پیام →</span>
+      </a>
+      <a href="#" class="channel-card" data-anim="slide-left">
+        <div class="channel-icon">🎫</div>
         <h4>تیکت پشتیبانی</h4>
-        <div class="support-phone" style="visibility:hidden">-</div>
-        <p>ثبت درخواست و پیگیری آسان از طریق سامانه تیکت</p>
-        <a href="#" class="btn btn-outline" style="width:100%;justify-content:center;margin-top:12px">ثبت تیکت</a>
-      </div>
+        <span class="channel-value">سامانه تیکت آنلاین</span>
+        <p>ثبت درخواست و پیگیری آسان</p>
+        <span class="channel-action">ثبت تیکت →</span>
+      </a>
     </div>
   </div>
 </section>
 
-<!-- ==================== PRICING / FREE VERSION ==================== -->
-<section class="section" id="pricing" style="background:var(--bg-secondary)">
+<!-- ==================== PRICING ==================== -->
+<section class="section-block" id="pricing">
   <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">◆ نسخه رایگان، بدون محدودیت زمانی</div>
-      <h2 class="section-title">شروعی مطمئن برای استارتاپ‌ها و کسب‌وکارهای نوپا</h2>
-      <p class="section-desc">ما باور داریم آغاز هر کسب‌وکاری نباید پرهزینه و پیچیده باشد. نسخه رایگان روی هر سرور یا کامپیوتری قابل نصب است.</p>
+    <div class="section-intro" data-anim="fade-up">
+      <span class="eyebrow">شروع رایگان</span>
+      <h2 class="section-heading">رایگان شروع کنید، در مسیر رشد ارتقا دهید</h2>
+      <p class="section-body">نسخه رایگان بدون محدودیت زمانی، روی هر سرور یا کامپیوتری قابل نصب.</p>
     </div>
-    <div class="pricing-cards" id="pricingCards"></div>
-    <div class="license-note reveal">
-      <div class="license-icon">⚡</div>
-      <div>
-        <h4>تهیه سریع لایسنس‌ها متناسب با نیاز سازمان</h4>
-        <p>هر زمان که نیاز داشته باشید، می‌توانید از طریق ارسال تیکت به واحد پشتیبانی، لایسنس‌های موردنظر خود را به‌سرعت تهیه کنید.</p>
+    <div class="pricing-duo">
+      <div class="price-card" data-anim="slide-right">
+        <h3>رایگان</h3>
+        <div class="price-amount">۰ <small>تومان</small></div>
+        <div class="price-period">بدون محدودیت زمانی</div>
+        <ul>
+          <li>امکانات اصلی مرکز تماس</li>
+          <li>داشبورد مدیریتی</li>
+          <li>گزارش‌گیری پایه</li>
+          <li>تاریخ شمسی</li>
+          <li>پشتیبانی تیکت</li>
+        </ul>
+        <a href="#" class="btn-ghost" style="width:100%;justify-content:center">دریافت رایگان</a>
+      </div>
+      <div class="price-card price-card--featured" data-anim="slide-left">
+        <div class="price-badge">پیشنهاد ویژه</div>
+        <h3>حرفه‌ای</h3>
+        <div class="price-amount">تماس بگیرید</div>
+        <div class="price-period">لایسنس سازمانی</div>
+        <ul>
+          <li>تمام امکانات نسخه رایگان</li>
+          <li>ماژول‌های پیشرفته</li>
+          <li>گزارش‌های تحلیلی کامل</li>
+          <li>پشتیبانی تلفنی و واتساپ</li>
+          <li>بروزرسانی و توسعه اختصاصی</li>
+        </ul>
+        <a href="#consult" class="btn-solid" style="width:100%;justify-content:center">درخواست مشاوره ←</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ==================== FAQ ==================== -->
-<section class="section" id="faq">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">◆ سوالات متداول</div>
-      <h2 class="section-title">پاسخ به پرسش‌های شما</h2>
+<section class="section-block section-block--alt" id="faq">
+  <div class="container container--narrow">
+    <div class="section-intro" data-anim="fade-up">
+      <span class="eyebrow">سوالات متداول</span>
+      <h2 class="section-heading">پاسخ به پرسش‌های شما</h2>
     </div>
-    <div class="faq-list reveal">
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+    <div class="faq-list">
+      <div class="faq-item" data-anim="fade-up">
+        <button class="faq-q" aria-expanded="false">
           <span>آیا نسخه رایگان محدودیت زمانی دارد؟</span>
-          <span class="faq-arrow">▾</span>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <p>خیر. نسخه رایگان سیرا بدون هیچ محدودیت زمانی در اختیار شماست و می‌توانید تا هر زمانی از آن استفاده کنید.</p>
-        </div>
+        <div class="faq-a"><p>خیر. نسخه رایگان سیرا بدون هیچ محدودیت زمانی در اختیار شماست.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+      <div class="faq-item" data-anim="fade-up">
+        <button class="faq-q" aria-expanded="false">
           <span>آیا سیرا از تاریخ شمسی پشتیبانی می‌کند؟</span>
-          <span class="faq-arrow">▾</span>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <p>بله. تمامی گزارش‌ها و بخش‌های نرم‌افزار با تاریخ شمسی کار می‌کنند و نیازی به تبدیل تاریخ نیست.</p>
-        </div>
+        <div class="faq-a"><p>بله. تمامی بخش‌ها و گزارش‌ها با تاریخ شمسی کار می‌کنند.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
+      <div class="faq-item" data-anim="fade-up">
+        <button class="faq-q" aria-expanded="false">
           <span>نصب سیرا چقدر زمان می‌برد؟</span>
-          <span class="faq-arrow">▾</span>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <p>فرآیند نصب بسیار ساده است و معمولاً در کمتر از ۱۰ دقیقه قابل انجام است. مستندات کامل فارسی نیز در اختیار شماست.</p>
-        </div>
+        <div class="faq-a"><p>معمولاً در کمتر از ۱۰ دقیقه. مستندات کامل فارسی در اختیار شماست.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>چطور می‌تونم لایسنس حرفه‌ای تهیه کنم؟</span>
-          <span class="faq-arrow">▾</span>
+      <div class="faq-item" data-anim="fade-up">
+        <button class="faq-q" aria-expanded="false">
+          <span>چطور لایسنس حرفه‌ای تهیه کنم؟</span>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <p>کافیست از طریق سامانه تیکت یا تماس تلفنی با واحد پشتیبانی ارتباط برقرار کنید. لایسنس در کوتاه‌ترین زمان صادر می‌شود.</p>
-        </div>
+        <div class="faq-a"><p>از طریق تیکت یا تماس تلفنی. لایسنس در کوتاه‌ترین زمان صادر می‌شود.</p></div>
       </div>
-      <div class="faq-item">
-        <button class="faq-question" onclick="toggleFaq(this)">
-          <span>آیا امکان ارتقا از نسخه رایگان به حرفه‌ای وجود دارد؟</span>
-          <span class="faq-arrow">▾</span>
+      <div class="faq-item" data-anim="fade-up">
+        <button class="faq-q" aria-expanded="false">
+          <span>امکان ارتقا از رایگان به حرفه‌ای وجود دارد؟</span>
+          <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
         </button>
-        <div class="faq-answer">
-          <p>بله. شما می‌توانید هر زمان که بخواهید با تهیه لایسنس، ماژول‌های بیشتری فعال کنید و امکانات خود را ارتقا دهید.</p>
-        </div>
+        <div class="faq-a"><p>بله. هر زمان با تهیه لایسنس، ماژول‌های بیشتری فعال کنید.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ==================== CONSULTATION FORM ==================== -->
-<section class="section" id="consult" style="background:var(--bg-secondary)">
+<!-- ==================== CONSULT FORM ==================== -->
+<section class="section-block" id="consult">
   <div class="container">
-    <div class="consult-grid reveal">
-      <div class="consult-info">
-        <div class="section-label">◆ مشاوره رایگان</div>
-        <h2 class="section-title" style="text-align:right">همکاران ما آماده‌اند</h2>
-        <p style="color:var(--text-secondary);line-height:1.9;margin-bottom:24px">با راهنمایی حرفه‌ای و رایگان، انتخاب مناسب شما را تضمین می‌کنیم. ما فروش را پایان کار نمی‌دانیم؛ بلکه شروع یک تعهد و رابطه پایدار است.</p>
-        <div class="consult-contact">
-          <div class="consult-contact-item">
-            <span>📞</span>
-            <span>۰۲۱۶۷۲۴۱۰۰۰</span>
-          </div>
-          <div class="consult-contact-item">
-            <span>💬</span>
-            <span>پشتیبانی آنلاین واتساپ</span>
-          </div>
+    <div class="consult-layout">
+      <div class="consult-text" data-anim="slide-right">
+        <span class="eyebrow">مشاوره رایگان</span>
+        <h2 class="section-heading">همکاران ما آماده‌اند</h2>
+        <p class="section-body">با راهنمایی حرفه‌ای و رایگان، انتخاب مناسب شما را تضمین می‌کنیم. ما فروش را پایان کار نمی‌دانیم؛ بلکه شروع یک تعهد پایدار است.</p>
+        <div class="consult-channels">
+          <div class="cc-item"><span>📞</span><span dir="ltr">021-6724-1000</span></div>
+          <div class="cc-item"><span>💬</span><span>پشتیبانی واتساپ</span></div>
         </div>
       </div>
-      <div class="consult-form-wrap">
-        <form class="consult-form" id="consultForm" onsubmit="handleConsultForm(event)">
-          <h3>درخواست مشاوره رایگان</h3>
-          <div class="form-group">
-            <input type="text" id="formName" placeholder="نام و نام خانوادگی" required>
-          </div>
-          <div class="form-group">
-            <input type="tel" id="formPhone" placeholder="شماره تماس" required>
-          </div>
-          <div class="form-group">
-            <input type="text" id="formCompany" placeholder="نام سازمان (اختیاری)">
-          </div>
-          <div class="form-group">
-            <textarea id="formMessage" rows="3" placeholder="توضیحات (اختیاری)"></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;justify-content:center">ارسال درخواست ←</button>
-          <div class="form-success" id="formSuccess">✓ درخواست شما با موفقیت ثبت شد. به‌زودی با شما تماس می‌گیریم.</div>
-        </form>
-      </div>
+      <form class="consult-form" id="consultForm" data-anim="slide-left">
+        <h3>درخواست مشاوره</h3>
+        <input type="text" placeholder="نام و نام خانوادگی" required>
+        <input type="tel" placeholder="شماره تماس" required>
+        <input type="text" placeholder="نام سازمان (اختیاری)">
+        <textarea rows="3" placeholder="توضیحات (اختیاری)"></textarea>
+        <button type="submit" class="btn-solid" style="width:100%;justify-content:center">ارسال درخواست ←</button>
+        <div class="form-msg" id="formMsg">درخواست شما ثبت شد. به‌زودی تماس می‌گیریم.</div>
+      </form>
     </div>
   </div>
 </section>
 
 <!-- ==================== FINAL CTA ==================== -->
-<section class="final-cta section">
-  <div class="container reveal">
-    <h2>سیرا، <span class="highlight">تجربه‌ای فراتر از انتظار</span></h2>
-    <p>همه ابزارهای ارتباطی و مدیریتی در یک نرم‌افزار یکپارچه. با سیرا، سرعت، سادگی و کارایی را در کنار هم تجربه کنید.</p>
-    <div class="hero-buttons">
-      <a href="#pricing" class="btn btn-primary btn-lg">دریافت رایگان سیرا ←</a>
-      <a href="#consult" class="btn btn-outline btn-lg">مشاوره رایگان</a>
+<section class="final-cta" id="finalCta">
+  <div class="container" data-anim="scale-up">
+    <h2 class="final-heading">تجربه‌ای <span class="accent">فراتر از انتظار</span></h2>
+    <p>همه ابزارهای ارتباطی و مدیریتی در یک نرم‌افزار یکپارچه.</p>
+    <div class="final-actions">
+      <a href="#pricing" class="btn-solid btn-solid--lg">دریافت رایگان سیرا ←</a>
+      <a href="#consult" class="btn-ghost btn-ghost--lg">مشاوره رایگان</a>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="footer">
+<footer class="site-footer">
   <div class="container">
-    <p>© تمامی حقوق محفوظ است. سیرا - نرم‌افزار مرکز تماس هوشمند | SIRRA Call Center</p>
+    <div class="footer-inner">
+      <span class="footer-logo">SIRRA</span>
+      <p>© تمامی حقوق محفوظ است. سیرا — نرم‌افزار مرکز تماس هوشمند</p>
+    </div>
   </div>
 </footer>
 
 <!-- WhatsApp FAB -->
-<a href="https://wa.me/982167241000" target="_blank" class="whatsapp-fab" aria-label="واتساپ پشتیبانی">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+<a href="https://wa.me/982167241000" target="_blank" class="wa-fab" aria-label="واتساپ">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
+<!-- CDN Libraries -->
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
-<script>
-// FAQ Toggle
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const wasOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!wasOpen) item.classList.add('open');
-}
-
-// Consultation Form
-function handleConsultForm(e) {
-  e.preventDefault();
-  document.getElementById('formSuccess').classList.add('show');
-  setTimeout(() => {
-    document.getElementById('consultForm').reset();
-    document.getElementById('formSuccess').classList.remove('show');
-  }, 4000);
-}
-
-// Animated Counters
-function animateCounters() {
-  document.querySelectorAll('.counter-num').forEach(el => {
-    const target = parseInt(el.dataset.target);
-    const duration = 2000;
-    const start = performance.now();
-    function update(now) {
-      const elapsed = now - start;
-      const progress = Math.min(elapsed / duration, 1);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(target * eased).toLocaleString('fa-IR');
-      if (progress < 1) requestAnimationFrame(update);
-    }
-    requestAnimationFrame(update);
-  });
-}
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) { animateCounters(); counterObserver.unobserve(e.target); }
-  });
-}, { threshold: 0.3 });
-const counters = document.querySelector('.hero-counters');
-if (counters) counterObserver.observe(counters);
-</script>
 </body>
 </html>
