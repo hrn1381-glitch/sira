@@ -8,252 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --orange-50:#fff7ed;--orange-100:#ffedd5;--orange-200:#fed7aa;--orange-300:#fdba74;
-  --orange-400:#fb923c;--orange-500:#f97316;--orange-600:#ea580c;--orange-700:#c2410c;
-  --orange-800:#9a3412;--orange-900:#7c2d12;
-  --grad-orange:linear-gradient(135deg,#f97316,#ea580c,#fb923c);
-  --grad-orange-soft:linear-gradient(135deg,rgba(249,115,22,.15),rgba(234,88,12,.08));
-  --grad-hero:linear-gradient(160deg,#0a0a0a 0%,#1a1008 40%,#0d0d0d 100%);
-  --glass-bg:rgba(255,255,255,.06);
-  --glass-border:rgba(255,255,255,.1);
-  --glass-shadow:0 8px 32px rgba(0,0,0,.12);
-  --text-primary:#f5f5f7;--text-secondary:#a1a1aa;--text-tertiary:#71717a;
-  --bg-primary:#0a0a0a;--bg-secondary:#141414;--bg-card:#1a1a1a;
-  --radius-sm:8px;--radius-md:16px;--radius-lg:24px;--radius-xl:32px;
-  --font:'Vazirmatn',system-ui,-apple-system,sans-serif;
-  --transition:all .3s cubic-bezier(.4,0,.2,1);
-}
-[data-theme="light"]{
-  --glass-bg:rgba(255,255,255,.7);
-  --glass-border:rgba(0,0,0,.08);
-  --glass-shadow:0 8px 32px rgba(0,0,0,.06);
-  --text-primary:#1a1a1a;--text-secondary:#525252;--text-tertiary:#737373;
-  --bg-primary:#fafafa;--bg-secondary:#f5f5f5;--bg-card:#ffffff;
-  --grad-hero:linear-gradient(160deg,#fafafa 0%,#fff7ed 40%,#fafafa 100%);
-}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:var(--font);background:var(--bg-primary);color:var(--text-primary);
-  line-height:1.7;overflow-x:hidden;transition:background .4s,color .4s}
-a{text-decoration:none;color:inherit}
-button{font-family:var(--font);cursor:pointer;border:none;background:none}
-img{max-width:100%;display:block}
-.container{max-width:1200px;margin:0 auto;padding:0 24px}
-.section{padding:120px 0;position:relative}
-
-/* ===== Animated Background ===== */
-.bg-orbs{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden}
-.bg-orbs .orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:.3;animation:orbFloat 20s ease-in-out infinite}
-.bg-orbs .orb:nth-child(1){width:600px;height:600px;background:var(--orange-500);top:-200px;right:-200px;animation-delay:0s}
-.bg-orbs .orb:nth-child(2){width:400px;height:400px;background:var(--orange-600);bottom:-100px;left:-100px;animation-delay:-7s}
-.bg-orbs .orb:nth-child(3){width:300px;height:300px;background:var(--orange-400);top:50%;left:50%;animation-delay:-14s;opacity:.15}
-@keyframes orbFloat{0%,100%{transform:translate(0,0) scale(1)}25%{transform:translate(30px,-40px) scale(1.05)}50%{transform:translate(-20px,30px) scale(.95)}75%{transform:translate(40px,20px) scale(1.02)}}
-[data-theme="light"] .bg-orbs .orb{opacity:.12}
-
-/* ===== Navbar ===== */
-.navbar{position:fixed;top:0;left:0;right:0;z-index:1000;padding:16px 0;transition:var(--transition)}
-.navbar.scrolled{background:rgba(10,10,10,.8);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--glass-border)}
-[data-theme="light"] .navbar.scrolled{background:rgba(250,250,250,.85)}
-.navbar .container{display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:1.5rem;font-weight:800;background:var(--grad-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.5px}
-.nav-links{display:flex;gap:32px;align-items:center}
-.nav-links a{font-size:.875rem;font-weight:500;color:var(--text-secondary);transition:var(--transition)}
-.nav-links a:hover{color:var(--orange-500)}
-.nav-actions{display:flex;gap:12px;align-items:center}
-.theme-toggle{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:blur(10px);transition:var(--transition);font-size:1.1rem}
-.theme-toggle:hover{background:rgba(249,115,22,.15);border-color:var(--orange-500)}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border-radius:var(--radius-sm);
-  font-size:.875rem;font-weight:600;transition:var(--transition);position:relative;overflow:hidden}
-.btn-primary{background:var(--grad-orange);color:#fff;box-shadow:0 4px 24px rgba(249,115,22,.3)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(249,115,22,.4)}
-.btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:100%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);transition:.6s}
-.btn-primary:hover::after{left:100%}
-.btn-outline{border:1px solid var(--glass-border);color:var(--text-primary);backdrop-filter:blur(10px);background:var(--glass-bg)}
-.btn-outline:hover{border-color:var(--orange-500);color:var(--orange-500);background:rgba(249,115,22,.05)}
-.btn-lg{padding:14px 32px;font-size:1rem;border-radius:var(--radius-md)}
-.mobile-toggle{display:none;flex-direction:column;gap:5px;width:28px}
-.mobile-toggle span{height:2px;background:var(--text-primary);border-radius:2px;transition:var(--transition)}
-
-/* ===== Hero ===== */
-.hero{min-height:100vh;display:flex;align-items:center;padding-top:100px;position:relative;overflow:hidden}
-.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;padding:6px 16px;border-radius:100px;
-  background:rgba(249,115,22,.1);border:1px solid rgba(249,115,22,.2);color:var(--orange-400);
-  font-size:.8rem;font-weight:600;margin-bottom:24px}
-.hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--orange-500);animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:900;line-height:1.3;margin-bottom:20px;letter-spacing:-.5px}
-.hero h1 .highlight{background:var(--grad-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:1.1rem;color:var(--text-secondary);margin-bottom:36px;max-width:520px;line-height:1.8}
-.hero-buttons{display:flex;gap:16px;flex-wrap:wrap}
-.hero-visual{position:relative;display:flex;justify-content:center;align-items:center}
-.hero-mockup{position:relative;width:100%;max-width:540px}
-.mockup-window{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
-  overflow:hidden;box-shadow:0 24px 80px rgba(0,0,0,.3),0 0 0 1px var(--glass-border);position:relative}
-[data-theme="light"] .mockup-window{box-shadow:0 24px 80px rgba(0,0,0,.08),0 0 0 1px var(--glass-border)}
-.mockup-bar{display:flex;align-items:center;gap:8px;padding:14px 18px;border-bottom:1px solid var(--glass-border)}
-.mockup-dot{width:10px;height:10px;border-radius:50%}
-.mockup-dot:nth-child(1){background:#ff5f57}.mockup-dot:nth-child(2){background:#ffbd2e}.mockup-dot:nth-child(3){background:#28c840}
-.mockup-body{padding:24px;min-height:320px;background:var(--bg-secondary)}
-.mockup-stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px}
-.mockup-stat{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:16px;text-align:center}
-.mockup-stat .num{font-size:1.5rem;font-weight:800;background:var(--grad-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.mockup-stat .lbl{font-size:.7rem;color:var(--text-tertiary);margin-top:4px}
-.mockup-chart{height:120px;background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-sm);
-  position:relative;overflow:hidden;display:flex;align-items:flex-end;gap:6px;padding:12px}
-.chart-bar{flex:1;background:var(--grad-orange);border-radius:4px 4px 0 0;opacity:.7;animation:chartGrow 1.5s ease-out forwards}
-@keyframes chartGrow{from{height:0}to{height:var(--h)}}
-.floating-card{position:absolute;background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
-  border:1px solid var(--glass-border);border-radius:var(--radius-md);padding:16px 20px;
-  box-shadow:var(--glass-shadow);animation:floatCard 6s ease-in-out infinite;z-index:2}
-.floating-card.fc1{top:-20px;right:-30px;animation-delay:0s}
-.floating-card.fc2{bottom:40px;left:-40px;animation-delay:-3s}
-@keyframes floatCard{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
-.fc-icon{font-size:1.5rem;margin-bottom:6px}
-.fc-num{font-size:1.2rem;font-weight:800;color:var(--text-primary)}
-.fc-lbl{font-size:.7rem;color:var(--text-tertiary)}
-
-/* ===== Trust Strip ===== */
-.trust-strip{padding:60px 0;position:relative;z-index:1}
-.trust-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
-.trust-chip{display:flex;align-items:center;gap:8px;padding:10px 20px;border-radius:100px;
-  background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:blur(10px);
-  font-size:.85rem;font-weight:500;color:var(--text-secondary);transition:var(--transition)}
-.trust-chip:hover{border-color:var(--orange-500);color:var(--orange-400);background:rgba(249,115,22,.06)}
-.trust-chip .icon{font-size:1.1rem}
-
-/* ===== Section Headers ===== */
-.section-header{text-align:center;margin-bottom:64px}
-.section-label{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:600;
-  color:var(--orange-500);text-transform:uppercase;letter-spacing:2px;margin-bottom:12px}
-.section-title{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;letter-spacing:-.5px;margin-bottom:16px}
-.section-desc{font-size:1.05rem;color:var(--text-secondary);max-width:600px;margin:0 auto;line-height:1.8}
-
-/* ===== Features ===== */
-.features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.feature-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
-  padding:32px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:var(--transition);position:relative;overflow:hidden}
-.feature-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
-  background:var(--grad-orange);opacity:0;transition:var(--transition)}
-.feature-card:hover{transform:translateY(-4px);border-color:rgba(249,115,22,.3);box-shadow:0 16px 48px rgba(249,115,22,.08)}
-.feature-card:hover::before{opacity:1}
-.feature-icon{width:48px;height:48px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;
-  background:rgba(249,115,22,.1);font-size:1.4rem;margin-bottom:20px}
-.feature-card h3{font-size:1.1rem;font-weight:700;margin-bottom:10px}
-.feature-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.8}
-
-/* ===== Capabilities ===== */
-.capabilities-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.cap-list{display:flex;flex-direction:column;gap:16px}
-.cap-item{display:flex;gap:16px;padding:20px;border-radius:var(--radius-md);background:var(--glass-bg);
-  border:1px solid var(--glass-border);backdrop-filter:blur(10px);transition:var(--transition)}
-.cap-item:hover{border-color:rgba(249,115,22,.3);background:rgba(249,115,22,.04)}
-.cap-icon{width:44px;height:44px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;
-  background:rgba(249,115,22,.1);font-size:1.2rem;flex-shrink:0}
-.cap-item h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
-.cap-item p{font-size:.82rem;color:var(--text-secondary);line-height:1.7}
-.cap-visual{position:relative}
-.cap-dashboard{background:var(--bg-card);border:1px solid var(--glass-border);border-radius:var(--radius-lg);padding:24px;
-  box-shadow:0 16px 64px rgba(0,0,0,.15)}
-[data-theme="light"] .cap-dashboard{box-shadow:0 16px 64px rgba(0,0,0,.05)}
-.cap-metric-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.cap-metric{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-sm);padding:20px;text-align:center}
-.cap-metric .big{font-size:2rem;font-weight:900;background:var(--grad-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cap-metric .sub{font-size:.75rem;color:var(--text-tertiary);margin-top:4px}
-
-/* ===== Steps ===== */
-.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
-.steps-grid::before{content:'';position:absolute;top:48px;left:15%;right:15%;height:2px;
-  background:linear-gradient(90deg,transparent,var(--orange-500),transparent);opacity:.2}
-.step-card{text-align:center;position:relative;z-index:1}
-.step-num{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  background:var(--grad-orange);color:#fff;font-size:1.3rem;font-weight:800;margin:0 auto 20px;
-  box-shadow:0 8px 24px rgba(249,115,22,.25)}
-.step-card h4{font-size:1rem;font-weight:700;margin-bottom:8px}
-.step-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.7}
-
-/* ===== Support ===== */
-.support-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.support-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
-  padding:36px;text-align:center;backdrop-filter:blur(12px);transition:var(--transition)}
-.support-card:hover{transform:translateY(-4px);border-color:rgba(249,115,22,.3)}
-.support-icon{font-size:2.5rem;margin-bottom:16px}
-.support-card h4{font-size:1.05rem;font-weight:700;margin-bottom:8px}
-.support-card p{font-size:.85rem;color:var(--text-secondary);line-height:1.7}
-
-/* ===== Pricing ===== */
-.pricing-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:800px;margin:0 auto}
-.pricing-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-xl);
-  padding:40px;backdrop-filter:blur(12px);transition:var(--transition);position:relative;overflow:hidden}
-.pricing-card.featured{border-color:var(--orange-500);background:rgba(249,115,22,.04)}
-.pricing-card.featured::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad-orange)}
-.pricing-badge{display:inline-block;padding:4px 14px;border-radius:100px;background:var(--grad-orange);
-  color:#fff;font-size:.75rem;font-weight:700;margin-bottom:16px}
-.pricing-card h3{font-size:1.3rem;font-weight:800;margin-bottom:8px}
-.pricing-price{font-size:2.5rem;font-weight:900;margin-bottom:4px}
-.pricing-price .currency{font-size:1rem;font-weight:500;color:var(--text-secondary)}
-.pricing-period{font-size:.85rem;color:var(--text-tertiary);margin-bottom:24px}
-.pricing-features{list-style:none;margin-bottom:32px}
-.pricing-features li{display:flex;align-items:center;gap:10px;padding:8px 0;font-size:.9rem;color:var(--text-secondary);border-bottom:1px solid var(--glass-border)}
-.pricing-features li:last-child{border:none}
-.pricing-features .check{color:var(--orange-500);font-weight:700}
-
-/* ===== Final CTA ===== */
-.final-cta{text-align:center;padding:120px 0;position:relative;overflow:hidden}
-.final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(249,115,22,.08) 0%,transparent 70%)}
-.final-cta h2{font-size:clamp(2rem,4vw,3rem);font-weight:900;margin-bottom:16px}
-.final-cta p{font-size:1.1rem;color:var(--text-secondary);margin-bottom:40px;max-width:550px;margin-left:auto;margin-right:auto}
-.final-cta .hero-buttons{justify-content:center}
-
-/* ===== Footer ===== */
-.footer{padding:40px 0;border-top:1px solid var(--glass-border);text-align:center}
-.footer p{font-size:.85rem;color:var(--text-tertiary)}
-
-/* ===== Reveal Animation ===== */
-.reveal{opacity:0;transform:translateY(30px);transition:opacity .8s cubic-bezier(.4,0,.2,1),transform .8s cubic-bezier(.4,0,.2,1)}
-.reveal.visible{opacity:1;transform:translateY(0)}
-
-/* ===== Mobile Nav ===== */
-.mobile-menu{display:none;position:fixed;inset:0;z-index:999;background:rgba(10,10,10,.95);backdrop-filter:blur(20px);
-  flex-direction:column;align-items:center;justify-content:center;gap:32px}
-[data-theme="light"] .mobile-menu{background:rgba(250,250,250,.95)}
-.mobile-menu.active{display:flex}
-.mobile-menu a{font-size:1.2rem;font-weight:600;color:var(--text-primary)}
-.mobile-close{position:absolute;top:24px;left:24px;font-size:1.5rem;color:var(--text-primary);background:none;border:none;cursor:pointer}
-
-/* ===== Responsive ===== */
-@media(max-width:1024px){
-  .hero-grid{grid-template-columns:1fr;text-align:center}
-  .hero p{margin:0 auto 36px}
-  .hero-buttons{justify-content:center}
-  .hero-visual{margin-top:48px}
-  .features-grid{grid-template-columns:repeat(2,1fr)}
-  .capabilities-grid{grid-template-columns:1fr}
-  .cap-visual{order:-1}
-  .steps-grid{grid-template-columns:repeat(2,1fr)}
-  .steps-grid::before{display:none}
-}
-@media(max-width:768px){
-  .nav-links{display:none}
-  .mobile-toggle{display:flex}
-  .features-grid,.support-grid{grid-template-columns:1fr}
-  .pricing-cards{grid-template-columns:1fr}
-  .section{padding:80px 0}
-  .hero{padding-top:80px}
-  .mockup-stat-row{grid-template-columns:1fr 1fr 1fr}
-  .floating-card.fc1{right:-10px;top:-10px;padding:12px 14px}
-  .floating-card.fc2{left:-10px;bottom:20px;padding:12px 14px}
-}
-@media(max-width:480px){
-  .hero-buttons{flex-direction:column;width:100%}
-  .hero-buttons .btn{width:100%;justify-content:center}
-  .steps-grid{grid-template-columns:1fr}
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -264,7 +19,10 @@ img{max-width:100%;display:block}
   <div class="orb"></div>
 </div>
 
-<!-- Navbar -->
+<!-- ============================
+     NAVBAR
+     برای تغییر لینک‌های منو: href هر <a> رو ویرایش کنید
+     ============================ -->
 <nav class="navbar" id="navbar">
   <div class="container">
     <a href="#" class="nav-logo">SIRRA</a>
@@ -288,15 +46,19 @@ img{max-width:100%;display:block}
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobileMenu">
   <button class="mobile-close" id="mobileClose">✕</button>
-  <a href="#features" onclick="closeMobile()">امکانات</a>
-  <a href="#capabilities" onclick="closeMobile()">قابلیت‌ها</a>
-  <a href="#setup" onclick="closeMobile()">راه‌اندازی</a>
-  <a href="#support" onclick="closeMobile()">پشتیبانی</a>
-  <a href="#pricing" onclick="closeMobile()">قیمت‌گذاری</a>
-  <a href="#pricing" class="btn btn-primary btn-lg" onclick="closeMobile()">شروع رایگان</a>
+  <a href="#features">امکانات</a>
+  <a href="#capabilities">قابلیت‌ها</a>
+  <a href="#setup">راه‌اندازی</a>
+  <a href="#support">پشتیبانی</a>
+  <a href="#pricing">قیمت‌گذاری</a>
+  <a href="#pricing" class="btn btn-primary btn-lg">شروع رایگان</a>
 </div>
 
-<!-- Hero -->
+<!-- ============================
+     HERO
+     متن‌ها از script.js > CONTENT_CONFIG.hero خونده میشن
+     برای تغییر عکس ماکاپ: تگ‌های mockup-body رو ویرایش کنید
+     ============================ -->
 <section class="hero section">
   <div class="container">
     <div class="hero-grid">
@@ -314,16 +76,22 @@ img{max-width:100%;display:block}
       </div>
       <div class="hero-visual">
         <div class="hero-mockup">
+
+          <!-- کارت شناور ۱ — برای تغییر آمار: script.js > floatingCards -->
           <div class="floating-card fc1">
             <div class="fc-icon">📞</div>
             <div class="fc-num">۱,۲۴۸</div>
             <div class="fc-lbl">تماس امروز</div>
           </div>
+
+          <!-- کارت شناور ۲ -->
           <div class="floating-card fc2">
             <div class="fc-icon">⚡</div>
             <div class="fc-num">٪۹۸.۷</div>
             <div class="fc-lbl">آپتایم سرویس</div>
           </div>
+
+          <!-- ماکاپ داشبورد — برای جایگزینی با عکس: این div رو با <img> عوض کنید -->
           <div class="mockup-window">
             <div class="mockup-bar">
               <div class="mockup-dot"></div>
@@ -367,23 +135,20 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
-<!-- Trust Strip -->
+<!-- ============================
+     TRUST STRIP
+     محتوا از script.js > CONTENT_CONFIG.trustChips رندر میشه
+     ============================ -->
 <section class="trust-strip">
   <div class="container">
-    <div class="trust-grid">
-      <div class="trust-chip"><span class="icon">🎁</span> نسخه رایگان</div>
-      <div class="trust-chip"><span class="icon">🇮🇷</span> کاملاً فارسی</div>
-      <div class="trust-chip"><span class="icon">🔒</span> امنیت بالا</div>
-      <div class="trust-chip"><span class="icon">⚡</span> نصب سریع</div>
-      <div class="trust-chip"><span class="icon">📈</span> توسعه‌پذیر</div>
-      <div class="trust-chip"><span class="icon">📊</span> گزارش‌گیری جامع</div>
-      <div class="trust-chip"><span class="icon">📅</span> تاریخ شمسی</div>
-      <div class="trust-chip"><span class="icon">🔄</span> بروزرسانی مداوم</div>
-    </div>
+    <div class="trust-grid" id="trustGrid"></div>
   </div>
 </section>
 
-<!-- Features -->
+<!-- ============================
+     FEATURES
+     محتوا از script.js > CONTENT_CONFIG.features رندر میشه
+     ============================ -->
 <section class="section" id="features">
   <div class="container">
     <div class="section-header reveal">
@@ -391,42 +156,14 @@ img{max-width:100%;display:block}
       <h2 class="section-title">هر آنچه برای مدیریت حرفه‌ای تماس نیاز دارید</h2>
       <p class="section-desc">سیرا با ماژول‌های متنوع و کاربردی، تمام نیازهای مرکز تماس شما را در یک پلتفرم یکپارچه پوشش می‌دهد.</p>
     </div>
-    <div class="features-grid">
-      <div class="feature-card reveal">
-        <div class="feature-icon">📊</div>
-        <h3>داشبورد زنده و تحلیلی</h3>
-        <p>مانیتورینگ لحظه‌ای تماس‌ها، صف‌ها و عملکرد اپراتورها با نمودارهای تعاملی و گزارش‌های دقیق.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">👥</div>
-        <h3>مدیریت هوشمند اپراتورها</h3>
-        <p>ارزیابی عملکرد، تخصیص خودکار تماس‌ها، مدیریت شیفت و نظارت بر کیفیت مکالمات.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🔐</div>
-        <h3>امنیت و احراز هویت پیشرفته</h3>
-        <p>سیستم احراز هویت چندلایه، مدیریت سطوح دسترسی و رمزنگاری اطلاعات حساس.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">📅</div>
-        <h3>تاریخ شمسی و بومی‌سازی</h3>
-        <p>پشتیبانی کامل از تاریخ شمسی، زبان فارسی و استانداردهای بومی کسب‌وکار ایرانی.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">🧩</div>
-        <h3>ماژول‌های متنوع</h3>
-        <p>ماژول‌های گزارش‌گیری، مدیریت صف، ضبط مکالمات، نظرسنجی و بسیاری امکانات دیگر.</p>
-      </div>
-      <div class="feature-card reveal">
-        <div class="feature-icon">⚙️</div>
-        <h3>معماری MVC استاندارد</h3>
-        <p>ساختار کد تمیز و استاندارد با قابلیت توسعه و سفارشی‌سازی بالا برای نیازهای خاص شما.</p>
-      </div>
-    </div>
+    <div class="features-grid" id="featuresGrid"></div>
   </div>
 </section>
 
-<!-- Capabilities -->
+<!-- ============================
+     CAPABILITIES
+     محتوا از script.js > CONTENT_CONFIG.capabilities رندر میشه
+     ============================ -->
 <section class="section" id="capabilities" style="background:var(--bg-secondary)">
   <div class="container">
     <div class="section-header reveal">
@@ -435,63 +172,20 @@ img{max-width:100%;display:block}
       <p class="section-desc">با ابزارهای تحلیلی پیشرفته، تصمیم‌های هوشمندانه‌تری بگیرید.</p>
     </div>
     <div class="capabilities-grid">
-      <div class="cap-list reveal">
-        <div class="cap-item">
-          <div class="cap-icon">📈</div>
-          <div>
-            <h4>تحلیل پیشرفته عملکرد</h4>
-            <p>گزارش‌های دقیق از عملکرد هر اپراتور، میانگین زمان پاسخ‌گویی و نرخ موفقیت تماس‌ها.</p>
-          </div>
-        </div>
-        <div class="cap-item">
-          <div class="cap-icon">📋</div>
-          <div>
-            <h4>گزارش صف و تماس‌ها</h4>
-            <p>مشاهده وضعیت لحظه‌ای صف‌ها، تماس‌های از دست رفته و زمان انتظار مشتریان.</p>
-          </div>
-        </div>
-        <div class="cap-item">
-          <div class="cap-icon">🔍</div>
-          <div>
-            <h4>جستجو و فیلتر هوشمند</h4>
-            <p>جستجوی سریع در تاریخچه تماس‌ها با فیلترهای پیشرفته و دسته‌بندی خودکار.</p>
-          </div>
-        </div>
-        <div class="cap-item">
-          <div class="cap-icon">📥</div>
-          <div>
-            <h4>خروجی Excel و PDF</h4>
-            <p>دریافت گزارش‌ها در فرمت‌های Excel و PDF برای ارائه به مدیران و تصمیم‌گیران.</p>
-          </div>
-        </div>
-      </div>
+      <div class="cap-list reveal" id="capList"></div>
       <div class="cap-visual reveal">
         <div class="cap-dashboard">
-          <div class="cap-metric-grid">
-            <div class="cap-metric">
-              <div class="big">۲,۴۵۶</div>
-              <div class="sub">تماس این هفته</div>
-            </div>
-            <div class="cap-metric">
-              <div class="big">۲۳ ث</div>
-              <div class="sub">میانگین پاسخ‌گویی</div>
-            </div>
-            <div class="cap-metric">
-              <div class="big">٪۹۶</div>
-              <div class="sub">نرخ موفقیت</div>
-            </div>
-            <div class="cap-metric">
-              <div class="big">۱۸</div>
-              <div class="sub">اپراتور فعال</div>
-            </div>
-          </div>
+          <div class="cap-metric-grid" id="capMetrics"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Setup Steps -->
+<!-- ============================
+     SETUP STEPS
+     محتوا از script.js > CONTENT_CONFIG.setup رندر میشه
+     ============================ -->
 <section class="section" id="setup">
   <div class="container">
     <div class="section-header reveal">
@@ -499,32 +193,14 @@ img{max-width:100%;display:block}
       <h2 class="section-title">در چند دقیقه راه‌اندازی کنید</h2>
       <p class="section-desc">بدون نیاز به دانش فنی پیچیده، سیرا را روی سرور خود نصب و اجرا کنید.</p>
     </div>
-    <div class="steps-grid">
-      <div class="step-card reveal">
-        <div class="step-num">۱</div>
-        <h4>دریافت لایسنس</h4>
-        <p>تهیه سریع لایسنس رایگان یا حرفه‌ای از سایت سیرا.</p>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-num">۲</div>
-        <h4>نصب روی سرور</h4>
-        <p>نصب آسان و سریع با مستندات کامل فارسی.</p>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-num">۳</div>
-        <h4>پیکربندی اولیه</h4>
-        <p>تنظیمات ساده و محیط کاربری فارسی آماده استفاده.</p>
-      </div>
-      <div class="step-card reveal">
-        <div class="step-num">۴</div>
-        <h4>شروع کار</h4>
-        <p>مرکز تماس شما آماده‌است. تماس‌ها را مدیریت کنید!</p>
-      </div>
-    </div>
+    <div class="steps-grid" id="stepsGrid"></div>
   </div>
 </section>
 
-<!-- Support -->
+<!-- ============================
+     SUPPORT
+     محتوا از script.js > CONTENT_CONFIG.support رندر میشه
+     ============================ -->
 <section class="section" id="support" style="background:var(--bg-secondary)">
   <div class="container">
     <div class="section-header reveal">
@@ -532,27 +208,14 @@ img{max-width:100%;display:block}
       <h2 class="section-title">همیشه کنار شما هستیم</h2>
       <p class="section-desc">تیم پشتیبانی سیرا با کانال‌های متنوع، پاسخگوی سوالات و نیازهای شماست.</p>
     </div>
-    <div class="support-grid">
-      <div class="support-card reveal">
-        <div class="support-icon">📞</div>
-        <h4>پشتیبانی تلفنی</h4>
-        <p>تماس مستقیم با کارشناسان فنی ما در ساعات کاری برای حل سریع مشکلات.</p>
-      </div>
-      <div class="support-card reveal">
-        <div class="support-icon">💬</div>
-        <h4>واتساپ</h4>
-        <p>ارسال پیام و دریافت پاسخ سریع از طریق واتساپ پشتیبانی سیرا.</p>
-      </div>
-      <div class="support-card reveal">
-        <div class="support-icon">🎫</div>
-        <h4>سیستم تیکت</h4>
-        <p>ثبت درخواست‌ها و پیگیری مراحل رسیدگی از طریق پنل تیکت اختصاصی.</p>
-      </div>
-    </div>
+    <div class="support-grid" id="supportGrid"></div>
   </div>
 </section>
 
-<!-- Pricing -->
+<!-- ============================
+     PRICING
+     محتوا از script.js > CONTENT_CONFIG.pricing رندر میشه
+     ============================ -->
 <section class="section" id="pricing">
   <div class="container">
     <div class="section-header reveal">
@@ -560,39 +223,13 @@ img{max-width:100%;display:block}
       <h2 class="section-title">رایگان شروع کنید، در مسیر رشد ارتقا دهید</h2>
       <p class="section-desc">نسخه رایگان بدون محدودیت زمانی، مناسب برای شروع و آزمایش تمام قابلیت‌ها.</p>
     </div>
-    <div class="pricing-cards">
-      <div class="pricing-card reveal">
-        <h3>نسخه رایگان</h3>
-        <div class="pricing-price">رایگان</div>
-        <div class="pricing-period">بدون محدودیت زمانی</div>
-        <ul class="pricing-features">
-          <li><span class="check">✓</span> امکانات اصلی مرکز تماس</li>
-          <li><span class="check">✓</span> داشبورد مدیریتی</li>
-          <li><span class="check">✓</span> گزارش‌گیری پایه</li>
-          <li><span class="check">✓</span> تاریخ شمسی</li>
-          <li><span class="check">✓</span> پشتیبانی تیکت</li>
-        </ul>
-        <a href="#" class="btn btn-outline" style="width:100%;justify-content:center">دریافت رایگان</a>
-      </div>
-      <div class="pricing-card featured reveal">
-        <div class="pricing-badge">پیشنهاد ویژه</div>
-        <h3>نسخه حرفه‌ای</h3>
-        <div class="pricing-price">تماس بگیرید</div>
-        <div class="pricing-period">لایسنس سازمانی</div>
-        <ul class="pricing-features">
-          <li><span class="check">✓</span> تمام امکانات نسخه رایگان</li>
-          <li><span class="check">✓</span> ماژول‌های پیشرفته</li>
-          <li><span class="check">✓</span> گزارش‌های تحلیلی کامل</li>
-          <li><span class="check">✓</span> پشتیبانی تلفنی و واتساپ</li>
-          <li><span class="check">✓</span> بروزرسانی و توسعه اختصاصی</li>
-        </ul>
-        <a href="#" class="btn btn-primary" style="width:100%;justify-content:center">درخواست مشاوره</a>
-      </div>
-    </div>
+    <div class="pricing-cards" id="pricingCards"></div>
   </div>
 </section>
 
-<!-- Final CTA -->
+<!-- ============================
+     FINAL CTA
+     ============================ -->
 <section class="final-cta section">
   <div class="container reveal">
     <h2>آماده‌اید مرکز تماس خود را <span class="highlight">متحول</span> کنید؟</h2>
@@ -611,45 +248,6 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
-<script>
-// Theme Toggle
-const toggle = document.getElementById('themeToggle');
-const html = document.documentElement;
-function setTheme(t) {
-  html.setAttribute('data-theme', t);
-  toggle.textContent = t === 'light' ? '☀️' : '🌙';
-  localStorage.setItem('theme', t);
-}
-toggle.addEventListener('click', () => setTheme(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
-const saved = localStorage.getItem('theme');
-if (saved) setTheme(saved);
-
-// Navbar scroll
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => navbar.classList.toggle('scrolled', window.scrollY > 50), { passive: true });
-
-// Mobile menu
-const mobileMenu = document.getElementById('mobileMenu');
-document.getElementById('mobileToggle').addEventListener('click', () => mobileMenu.classList.add('active'));
-document.getElementById('mobileClose').addEventListener('click', closeMobile);
-function closeMobile() { mobileMenu.classList.remove('active'); }
-
-// Reveal on scroll
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e, i) => {
-    if (e.isIntersecting) {
-      setTimeout(() => e.target.classList.add('visible'), i * 80);
-      observer.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => observer.observe(el));
-
-// Animate chart bars
-document.querySelectorAll('.chart-bar').forEach(bar => {
-  bar.style.height = bar.style.getPropertyValue('--h');
-});
-</script>
+<script src="script.js"></script>
 </body>
 </html>
