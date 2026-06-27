@@ -1,211 +1,277 @@
-/* SIRRA — GSAP + Lenis Script */
+/* =============================================
+   SIRRA — Professional Script
+   Lenis + GSAP ScrollTrigger
+   ============================================= */
 
 (function(){
+  'use strict';
 
-  /* ===== LOADER ===== */
-  const loader = document.getElementById('loader');
-  const loaderBar = document.getElementById('loaderBar');
-  const loaderPercent = document.getElementById('loaderPercent');
+  var persianDigit = function(n){
+    return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]});
+  };
 
+  /* ─── Loader ─── */
+  var loader = document.getElementById('loader');
   if(loader){
-    const persianDigits = n => String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
-    let progress = 0;
-    const tick = setInterval(()=>{
-      progress += Math.random()*18+4;
-      if(progress>=100) progress=100;
-      if(loaderBar) loaderBar.style.width = progress+'%';
-      if(loaderPercent) loaderPercent.textContent = persianDigits(Math.round(progress))+'٪';
-      if(progress>=100){
-        clearInterval(tick);
-        setTimeout(()=> loader.classList.add('done'),400);
-      }
-    },120);
+    window.addEventListener('load',function(){
+      setTimeout(function(){loader.classList.add('done')},600);
+    });
+    setTimeout(function(){loader.classList.add('done')},3000);
   }
 
-  /* ===== THEME TOGGLE ===== */
-  const themeToggle = document.getElementById('themeToggle');
-  const html = document.documentElement;
-  const saved = localStorage.getItem('sirra-theme');
+  /* ─── Theme ─── */
+  var html = document.documentElement;
+  var saved = localStorage.getItem('sirra-theme');
   if(saved) html.setAttribute('data-theme',saved);
 
-  if(themeToggle){
-    themeToggle.addEventListener('click',()=>{
-      const next = html.getAttribute('data-theme')==='light'?'dark':'light';
+  var themeBtn = document.getElementById('themeToggle');
+  if(themeBtn){
+    themeBtn.addEventListener('click',function(){
+      var next = html.getAttribute('data-theme')==='light'?'dark':'light';
       html.setAttribute('data-theme',next);
       localStorage.setItem('sirra-theme',next);
     });
   }
 
-  /* ===== HEADER SCROLL ===== */
-  const header = document.getElementById('siteHeader');
-  if(header){
-    window.addEventListener('scroll',()=>{
-      header.classList.toggle('scrolled',window.scrollY>50);
-    },{passive:true});
-  }
+  /* ─── Header scroll ─── */
+  var header = document.getElementById('siteHeader');
+  var navbar = document.getElementById('navbar');
+  var onScroll = function(){
+    var y = window.scrollY;
+    if(header) header.classList.toggle('scrolled',y>40);
+    if(navbar) navbar.classList.toggle('scrolled',y>40);
+  };
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
 
-  // Also handle .navbar for shop pages
-  const navbar = document.getElementById('navbar');
-  if(navbar){
-    window.addEventListener('scroll',()=>{
-      navbar.classList.toggle('scrolled',window.scrollY>50);
-    },{passive:true});
-  }
-
-  /* ===== MOBILE MENU ===== */
-  const mobileMenu = document.getElementById('mobileMenu');
-  const mobileToggle = document.getElementById('mobileToggle');
-  const mobileClose = document.getElementById('mobileClose');
-  if(mobileMenu&&mobileToggle){
-    mobileToggle.addEventListener('click',()=>mobileMenu.classList.add('active'));
-    if(mobileClose) mobileClose.addEventListener('click',()=>mobileMenu.classList.remove('active'));
-    mobileMenu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mobileMenu.classList.remove('active')));
-  }
-
-  /* ===== LENIS SMOOTH SCROLL ===== */
-  let lenis;
-  if(typeof Lenis!=='undefined'){
-    lenis = new Lenis({
-      duration:1.4,
-      easing:t=>Math.min(1,1.001-Math.pow(2,-10*t)),
-      smoothWheel:true,
-      wheelMultiplier:.8,
-      touchMultiplier:1.5,
+  /* ─── Mobile menu ─── */
+  var burger = document.getElementById('burger');
+  var overlay = document.getElementById('mobOverlay');
+  if(burger && overlay){
+    burger.addEventListener('click',function(){overlay.classList.toggle('open')});
+    overlay.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){overlay.classList.remove('open')});
     });
-    function raf(time){lenis.raf(time);requestAnimationFrame(raf)}
-    requestAnimationFrame(raf);
+  }
+  // shop pages
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileToggle = document.getElementById('mobileToggle');
+  var mobileClose = document.getElementById('mobileClose');
+  if(mobileMenu && mobileToggle){
+    mobileToggle.addEventListener('click',function(){mobileMenu.classList.add('active')});
+    if(mobileClose) mobileClose.addEventListener('click',function(){mobileMenu.classList.remove('active')});
+    mobileMenu.querySelectorAll('a').forEach(function(a){
+      a.addEventListener('click',function(){mobileMenu.classList.remove('active')});
+    });
   }
 
-  /* ===== GSAP + SCROLLTRIGGER ===== */
-  if(typeof gsap==='undefined'||typeof ScrollTrigger==='undefined') return;
+  /* ─── FAQ ─── */
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item = btn.closest('.faq-item');
+      var wasOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){
+        i.classList.remove('open');
+        i.querySelector('.faq-q').setAttribute('aria-expanded','false');
+      });
+      if(!wasOpen){
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  /* ─── Form ─── */
+  var form = document.getElementById('consultForm');
+  var formOk = document.getElementById('formOk');
+  if(form){
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      if(formOk){
+        formOk.classList.add('show');
+        setTimeout(function(){formOk.classList.remove('show')},4000);
+      }
+      form.reset();
+    });
+  }
+
+  /* ═════════════════════════════════════════════
+     Lenis Smooth Scroll
+     ═════════════════════════════════════════════ */
+  var lenis;
+  if(typeof Lenis !== 'undefined'){
+    lenis = new Lenis({
+      duration:1.3,
+      easing:function(t){return Math.min(1,1.001-Math.pow(2,-10*t))},
+      smoothWheel:true,
+      wheelMultiplier:0.85,
+      touchMultiplier:1.5
+    });
+  }
+
+  /* ═════════════════════════════════════════════
+     GSAP Animations
+     ═════════════════════════════════════════════ */
+  if(typeof gsap==='undefined' || typeof ScrollTrigger==='undefined'){
+    // No GSAP — make everything visible
+    document.querySelectorAll('.sec,.hero,.bento-item,.stat-block,.ch-card,.faq-item,.price-card,.tl-item,.split-text,.split-visual,.form-card,.report-card').forEach(function(el){el.style.opacity='1'});
+    if(lenis){
+      (function raf(t){lenis.raf(t);requestAnimationFrame(raf)})(0);
+    }
+    initAnchors();
+    return;
+  }
 
   gsap.registerPlugin(ScrollTrigger);
 
+  // Connect Lenis ↔ GSAP
   if(lenis){
     lenis.on('scroll',ScrollTrigger.update);
-    gsap.ticker.add(t=>lenis.raf(t*1000));
+    gsap.ticker.add(function(t){lenis.raf(t*1000)});
     gsap.ticker.lagSmoothing(0);
   }
 
-  /* --- Animate data-anim elements --- */
-  document.querySelectorAll('[data-anim]').forEach(el=>{
-    const type = el.dataset.anim;
-    const delay = parseFloat(el.dataset.delay)||0;
+  /* ─── Hero entrance ─── */
+  var heroTl = gsap.timeline({defaults:{ease:'power3.out'}});
 
-    const shared = {
-      scrollTrigger:{trigger:el,start:'top 88%',toggleActions:'play none none none'},
-      duration:.9,
-      delay,
-      ease:'power3.out',
-    };
+  var heroChip = document.querySelector('.hero-chip');
+  var heroH1   = document.querySelector('.hero-h1');
+  var heroP    = document.querySelector('.hero-p');
+  var heroBtns = document.querySelector('.hero-btns');
+  var dash     = document.querySelector('.dash');
 
-    switch(type){
-      case 'fade-up':
-        gsap.to(el,{...shared,opacity:1,y:0});
-        break;
-      case 'slide-right':
-        gsap.to(el,{...shared,opacity:1,x:0});
-        break;
-      case 'slide-left':
-        gsap.to(el,{...shared,opacity:1,x:0});
-        break;
-      case 'scale-up':
-        gsap.to(el,{...shared,opacity:1,scale:1});
-        break;
-      case 'clip-reveal':
-        gsap.to(el,{...shared,opacity:1,clipPath:'inset(0 0% 0 0)'});
-        break;
-      case 'stagger-up':
-        gsap.to(el,{...shared,opacity:1,y:0,delay:delay+el.closest('.stats-grid')?.querySelector('[data-anim]')===el?0:
-          Array.from(el.parentElement.children).indexOf(el)*.12});
-        break;
-      case 'split-words':
-        // handled below
-        break;
-      case 'marquee-scroll':
-        // parallax-style text
-        gsap.to(el,{
-          scrollTrigger:{trigger:el,start:'top bottom',end:'bottom top',scrub:1},
-          x:'-15%',ease:'none'
-        });
-        el.style.opacity=1;
-        break;
+  if(heroH1){
+    gsap.set([heroChip,heroH1,heroP,heroBtns].filter(Boolean),{opacity:0,y:30});
+    if(dash) gsap.set(dash,{opacity:0,y:40,scale:.97});
+
+    heroTl
+      .to(heroChip, {opacity:1,y:0,duration:.6},  0.15)
+      .to(heroH1,   {opacity:1,y:0,duration:.7},  0.3)
+      .to(heroP,    {opacity:1,y:0,duration:.6},  0.5)
+      .to(heroBtns, {opacity:1,y:0,duration:.5},  0.65);
+
+    if(dash){
+      heroTl.to(dash,{opacity:1,y:0,scale:1,duration:.8,ease:'power2.out'},0.4);
     }
-  });
+  }
 
-  /* --- Hero split-words --- */
-  const heroHeading = document.querySelector('[data-anim="split-words"]');
-  if(heroHeading){
-    const words = heroHeading.querySelectorAll('.hw');
-    heroHeading.style.opacity='1';
-    gsap.to(words,{
-      opacity:1,y:0,
-      duration:.7,
-      stagger:.12,
-      delay:.3,
-      ease:'power3.out',
+  /* ─── Chart line draw ─── */
+  var chartLine = document.querySelector('.chart-line');
+  if(chartLine){
+    gsap.to(chartLine,{
+      strokeDashoffset:0,
+      duration:1.5,
+      ease:'power2.inOut',
+      delay:1.2
     });
   }
 
-  /* --- Counter animation --- */
-  document.querySelectorAll('.stat-number').forEach(el=>{
-    const target = parseFloat(el.dataset.value)||0;
-    const isFloat = target%1!==0;
-    const persianDigits = n=>String(n).replace(/\d/g,d=>'۰۱۲۳۴۵۶۷۸۹'[d]);
+  /* ─── Scroll reveals ─── */
+  var revealGroups = [
+    {sel:'.stat-block', stagger:0.08},
+    {sel:'.bento-item', stagger:0.06},
+    {sel:'.ch-card',    stagger:0.08},
+    {sel:'.tl-item',    stagger:0.1},
+    {sel:'.price-card', stagger:0.1},
+    {sel:'.faq-item',   stagger:0.06}
+  ];
+
+  revealGroups.forEach(function(g){
+    var els = document.querySelectorAll(g.sel);
+    if(!els.length) return;
+    gsap.set(els,{opacity:0,y:32});
+    ScrollTrigger.batch(els,{
+      start:'top 90%',
+      onEnter:function(batch){
+        gsap.to(batch,{opacity:1,y:0,duration:.55,stagger:g.stagger,ease:'power2.out'});
+      },
+      once:true
+    });
+  });
+
+  // Single element reveals
+  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.report-card','.cta-end .container'];
+  singles.forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){
+      gsap.set(el,{opacity:0,y:36});
+      ScrollTrigger.create({
+        trigger:el,
+        start:'top 88%',
+        once:true,
+        onEnter:function(){
+          gsap.to(el,{opacity:1,y:0,duration:.6,ease:'power2.out'});
+        }
+      });
+    });
+  });
+
+  /* ─── Counter animation ─── */
+  document.querySelectorAll('.stat-num').forEach(function(el){
+    var target = parseFloat(el.getAttribute('data-to'));
+    if(isNaN(target)) return;
+    var isFloat = target%1!==0;
 
     ScrollTrigger.create({
       trigger:el,
-      start:'top 90%',
+      start:'top 92%',
       once:true,
-      onEnter:()=>{
-        gsap.to({v:0},{
+      onEnter:function(){
+        var obj = {v:0};
+        gsap.to(obj,{
           v:target,
-          duration:1.8,
+          duration:1.6,
           ease:'power2.out',
           onUpdate:function(){
-            const val = this.targets()[0].v;
-            el.textContent = persianDigits(isFloat?val.toFixed(1):Math.round(val).toLocaleString('en'));
+            var v = obj.v;
+            if(isFloat){
+              el.textContent = persianDigit(v.toFixed(1));
+            } else {
+              el.textContent = persianDigit(Math.round(v));
+            }
           }
         });
       }
     });
   });
 
-  /* ===== FAQ TOGGLE ===== */
-  document.querySelectorAll('.faq-q').forEach(btn=>{
-    btn.addEventListener('click',()=>{
-      const item = btn.closest('.faq-item');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-      if(!isOpen) item.classList.add('open');
-      btn.setAttribute('aria-expanded',!isOpen);
+  /* ─── Report bars animate ─── */
+  var bars = document.querySelectorAll('.rc-bar');
+  if(bars.length){
+    bars.forEach(function(b){
+      var h = b.style.getPropertyValue('--h');
+      b.style.height = '0%';
+      b.setAttribute('data-target-h',h);
     });
-  });
-
-  /* ===== CONSULTATION FORM ===== */
-  const form = document.getElementById('consultForm');
-  const formMsg = document.getElementById('formMsg');
-  if(form){
-    form.addEventListener('submit',e=>{
-      e.preventDefault();
-      if(formMsg){
-        formMsg.classList.add('show');
-        setTimeout(()=>formMsg.classList.remove('show'),4000);
+    ScrollTrigger.create({
+      trigger:'.report-card',
+      start:'top 85%',
+      once:true,
+      onEnter:function(){
+        bars.forEach(function(b,i){
+          gsap.to(b,{height:b.getAttribute('data-target-h'),duration:.6,delay:i*0.06,ease:'power2.out'});
+        });
       }
-      form.reset();
     });
   }
 
-  /* ===== ANCHOR SMOOTH SCROLL via Lenis ===== */
-  document.querySelectorAll('a[href^="#"]').forEach(a=>{
-    a.addEventListener('click',e=>{
-      const href = a.getAttribute('href');
-      if(href==='#') return;
-      e.preventDefault();
-      const target = document.querySelector(href);
-      if(target&&lenis) lenis.scrollTo(target,{offset:-80});
-      else if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+  /* ─── Anchor smooth scroll ─── */
+  initAnchors();
+
+  function initAnchors(){
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var href = a.getAttribute('href');
+        if(href==='#') return;
+        var target = document.querySelector(href);
+        if(!target) return;
+        e.preventDefault();
+        if(lenis){
+          lenis.scrollTo(target,{offset:-70});
+        } else {
+          target.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+      });
     });
-  });
+  }
 
 })();
