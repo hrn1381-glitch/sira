@@ -12,12 +12,6 @@
 </head>
 <body>
 
-<!-- Loader -->
-<div id="loader" aria-hidden="true">
-  <div class="loader-ring"></div>
-  <span class="loader-text">SIRRA</span>
-</div>
-
 <!-- Header -->
 <header class="site-header" id="siteHeader">
   <div class="header-inner">
@@ -72,59 +66,10 @@
       </div>
     </div>
     <div class="hero-visual">
-      <div class="dash">
-        <div class="dash-bar"><span class="dash-dots"><i></i><i></i><i></i></span><span class="dash-title">داشبورد مدیریت</span></div>
-        <div class="dash-body">
-          <div class="dash-row">
-            <div class="dash-kpi">
-              <span class="kpi-val">۲,۴۵۶</span>
-              <span class="kpi-lbl">تماس هفته</span>
-              <span class="kpi-trend kpi-up">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
-                +۱۲٪
-              </span>
-            </div>
-            <div class="dash-kpi">
-              <span class="kpi-val">۲۳<small>ث</small></span>
-              <span class="kpi-lbl">میانگین پاسخ</span>
-              <span class="kpi-trend kpi-down">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/></svg>
-                -۸٪
-              </span>
-            </div>
-          </div>
-          <div class="dash-row">
-            <div class="dash-kpi">
-              <span class="kpi-val">٪۹۶</span>
-              <span class="kpi-lbl">نرخ موفقیت</span>
-            </div>
-            <div class="dash-kpi">
-              <span class="kpi-val">۱۸</span>
-              <span class="kpi-lbl">اپراتور فعال</span>
-              <span class="kpi-live">
-                <i class="live-dot"></i> آنلاین
-              </span>
-            </div>
-          </div>
-          <div class="dash-chart">
-            <svg class="chart-svg" viewBox="0 0 280 80" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#f97316" stop-opacity=".3"/>
-                  <stop offset="100%" stop-color="#f97316" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path class="chart-area" d="M0,70 L28,55 56,60 84,35 112,40 140,20 168,30 196,15 224,25 252,18 280,10 L280,80 L0,80Z" fill="url(#cg)"/>
-              <polyline class="chart-line" points="0,70 28,55 56,60 84,35 112,40 140,20 168,30 196,15 224,25 252,18 280,10" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <div class="chart-label">عملکرد هفتگی</div>
-          </div>
-          <div class="dash-activity">
-            <div class="act-row"><span class="act-status act-on"></span><span class="act-name">محمد رضایی</span><span class="act-info">تماس ورودی — ۰۲:۳۴</span></div>
-            <div class="act-row"><span class="act-status act-on"></span><span class="act-name">سارا احمدی</span><span class="act-info">در صف — ۰۰:۱۲</span></div>
-            <div class="act-row"><span class="act-status act-idle"></span><span class="act-name">علی محمدی</span><span class="act-info">آماده — بدون تماس</span></div>
-          </div>
-        </div>
+      <div class="hero-media">
+        <video class="hero-video" autoplay muted loop playsinline>
+          <source src="assets/demo-4.mp4" type="video/mp4">
+        </video>
       </div>
     </div>
   </div>
@@ -236,8 +181,39 @@
   </div>
 </section>
 
+<!-- ===================== SHOWCASE ===================== -->
+<section class="sec" id="showcase">
+  <div class="container">
+    <div class="sec-top">
+      <span class="sec-label">سیرا در عمل</span>
+      <h2 class="sec-h2">نگاهی به محیط واقعی نرم‌افزار</h2>
+      <p class="sec-p">داشبورد، مانیتورینگ و گزارش‌گیری سیرا را در عمل ببینید.</p>
+    </div>
+    <div class="showcase-grid">
+      <div class="showcase-card showcase-card--main">
+        <video autoplay muted loop playsinline>
+          <source src="assets/demo-5.mp4" type="video/mp4">
+        </video>
+        <div class="showcase-label">مانیتورینگ لحظه‌ای اپراتورها</div>
+      </div>
+      <div class="showcase-card">
+        <video autoplay muted loop playsinline>
+          <source src="assets/demo-2.mp4" type="video/mp4">
+        </video>
+        <div class="showcase-label">گزارش تحلیلی صف‌ها</div>
+      </div>
+      <div class="showcase-card">
+        <video autoplay muted loop playsinline>
+          <source src="assets/demo-3.mp4" type="video/mp4">
+        </video>
+        <div class="showcase-label">نمودار عملکرد تماس‌ها</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===================== REPORTING ===================== -->
-<section class="sec" id="reporting">
+<section class="sec sec--alt" id="reporting">
   <div class="container">
     <div class="split">
       <div class="split-text">
@@ -268,24 +244,10 @@
         </ul>
       </div>
       <div class="split-visual">
-        <div class="report-card">
-          <div class="rc-head">
-            <span class="rc-title">تحلیل تماس‌ها</span>
-            <span class="rc-period">هفته جاری</span>
-          </div>
-          <div class="rc-chart">
-            <div class="rc-bar" style="--h:38%"><span>ش</span></div>
-            <div class="rc-bar" style="--h:62%"><span>ی</span></div>
-            <div class="rc-bar" style="--h:48%"><span>د</span></div>
-            <div class="rc-bar rc-bar--accent" style="--h:85%"><span>س</span></div>
-            <div class="rc-bar" style="--h:55%"><span>چ</span></div>
-            <div class="rc-bar" style="--h:72%"><span>پ</span></div>
-            <div class="rc-bar" style="--h:44%"><span>ج</span></div>
-          </div>
-          <div class="rc-foot">
-            <div class="rc-stat"><span class="rc-sv">۱,۸۴۲</span><span class="rc-sl">پاسخ داده شده</span></div>
-            <div class="rc-stat"><span class="rc-sv rc-sv--warn">۱۲۴</span><span class="rc-sl">از دست رفته</span></div>
-          </div>
+        <div class="media-frame">
+          <video autoplay muted loop playsinline>
+            <source src="assets/demo-1.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>

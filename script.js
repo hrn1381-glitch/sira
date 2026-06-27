@@ -10,15 +10,6 @@
     return String(n).replace(/\d/g,function(d){return '۰۱۲۳۴۵۶۷۸۹'[d]});
   };
 
-  /* ─── Loader ─── */
-  var loader = document.getElementById('loader');
-  if(loader){
-    window.addEventListener('load',function(){
-      setTimeout(function(){loader.classList.add('done')},600);
-    });
-    setTimeout(function(){loader.classList.add('done')},3000);
-  }
-
   /* ─── Theme ─── */
   var html = document.documentElement;
   var saved = localStorage.getItem('sirra-theme');
@@ -138,11 +129,11 @@
   var heroH1   = document.querySelector('.hero-h1');
   var heroP    = document.querySelector('.hero-p');
   var heroBtns = document.querySelector('.hero-btns');
-  var dash     = document.querySelector('.dash');
+  var heroMedia= document.querySelector('.hero-media');
 
   if(heroH1){
     gsap.set([heroChip,heroH1,heroP,heroBtns].filter(Boolean),{opacity:0,y:30});
-    if(dash) gsap.set(dash,{opacity:0,y:40,scale:.97});
+    if(heroMedia) gsap.set(heroMedia,{opacity:0,y:40,scale:.97});
 
     heroTl
       .to(heroChip, {opacity:1,y:0,duration:.6},  0.15)
@@ -150,20 +141,9 @@
       .to(heroP,    {opacity:1,y:0,duration:.6},  0.5)
       .to(heroBtns, {opacity:1,y:0,duration:.5},  0.65);
 
-    if(dash){
-      heroTl.to(dash,{opacity:1,y:0,scale:1,duration:.8,ease:'power2.out'},0.4);
+    if(heroMedia){
+      heroTl.to(heroMedia,{opacity:1,y:0,scale:1,duration:.8,ease:'power2.out'},0.4);
     }
-  }
-
-  /* ─── Chart line draw ─── */
-  var chartLine = document.querySelector('.chart-line');
-  if(chartLine){
-    gsap.to(chartLine,{
-      strokeDashoffset:0,
-      duration:1.5,
-      ease:'power2.inOut',
-      delay:1.2
-    });
   }
 
   /* ─── Scroll reveals ─── */
@@ -173,7 +153,8 @@
     {sel:'.ch-card',    stagger:0.08},
     {sel:'.tl-item',    stagger:0.1},
     {sel:'.price-card', stagger:0.1},
-    {sel:'.faq-item',   stagger:0.06}
+    {sel:'.faq-item',   stagger:0.06},
+    {sel:'.showcase-card', stagger:0.1}
   ];
 
   revealGroups.forEach(function(g){
@@ -190,7 +171,7 @@
   });
 
   // Single element reveals
-  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.report-card','.cta-end .container'];
+  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container'];
   singles.forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el){
       gsap.set(el,{opacity:0,y:36});
@@ -233,26 +214,6 @@
       }
     });
   });
-
-  /* ─── Report bars animate ─── */
-  var bars = document.querySelectorAll('.rc-bar');
-  if(bars.length){
-    bars.forEach(function(b){
-      var h = b.style.getPropertyValue('--h');
-      b.style.height = '0%';
-      b.setAttribute('data-target-h',h);
-    });
-    ScrollTrigger.create({
-      trigger:'.report-card',
-      start:'top 85%',
-      once:true,
-      onEnter:function(){
-        bars.forEach(function(b,i){
-          gsap.to(b,{height:b.getAttribute('data-target-h'),duration:.6,delay:i*0.06,ease:'power2.out'});
-        });
-      }
-    });
-  }
 
   /* ─── Anchor smooth scroll ─── */
   initAnchors();
