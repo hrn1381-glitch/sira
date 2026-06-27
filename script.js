@@ -154,7 +154,9 @@
     {sel:'.tl-item',    stagger:0.1},
     {sel:'.price-card', stagger:0.1},
     {sel:'.faq-item',   stagger:0.06},
-    {sel:'.showcase-card', stagger:0.1}
+    {sel:'.showcase-card', stagger:0.1},
+    {sel:'.sf-card',       stagger:0.12},
+    {sel:'.sv-item',       stagger:0.08}
   ];
 
   revealGroups.forEach(function(g){
@@ -171,7 +173,7 @@
   });
 
   // Single element reveals
-  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container'];
+  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.showcase-hero','.sv-title'];
   singles.forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el){
       gsap.set(el,{opacity:0,y:36});
