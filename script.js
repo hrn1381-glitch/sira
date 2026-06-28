@@ -130,6 +130,7 @@
   var heroP    = document.querySelector('.hero-p');
   var heroBtns = document.querySelector('.hero-btns');
   var heroMedia= document.querySelector('.hero-media');
+  var heroGlass= document.querySelector('.hero-glass');
 
   if(heroH1){
     gsap.set([heroChip,heroH1,heroP,heroBtns].filter(Boolean),{opacity:0,y:30});
@@ -141,6 +142,10 @@
       .to(heroP,    {opacity:1,y:0,duration:.6},  0.5)
       .to(heroBtns, {opacity:1,y:0,duration:.5},  0.65);
 
+    if(heroGlass){
+      gsap.set(heroGlass,{opacity:0,scale:.96});
+      heroTl.to(heroGlass,{opacity:1,scale:1,duration:.7,ease:'power2.out'},0.05);
+    }
     if(heroMedia){
       heroTl.to(heroMedia,{opacity:1,y:0,scale:1,duration:.8,ease:'power2.out'},0.4);
     }
