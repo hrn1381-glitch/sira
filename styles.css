@@ -178,23 +178,26 @@ img{max-width:100%;display:block}
 
 /* ─── BLOCK 1: Full bleed ─── */
 .ed-bleed{position:relative;width:100vw;margin-right:calc(50% - 50vw);overflow:hidden;
-  min-height:70vh;display:flex;align-items:flex-end}
-.ed-bleed-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  height:85vh;max-height:720px;display:flex;align-items:flex-end}
+.ed-bleed-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center center;
+  background:#000}
 .ed-bleed::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(to left, rgba(0,0,0,.02) 0%, rgba(0,0,0,.65) 55%, rgba(0,0,0,.85) 100%)}
-.ed-bleed-copy{position:relative;z-index:2;padding:80px calc((100vw - 1160px)/2 + 24px);max-width:680px}
+  background:linear-gradient(to left,rgba(0,0,0,.0) 35%,rgba(0,0,0,.6) 65%,rgba(0,0,0,.88) 100%)}
+.ed-bleed-copy{position:relative;z-index:2;padding:0 0 64px;
+  width:100%;max-width:1200px;margin:0 auto;padding-right:clamp(24px,5vw,80px);padding-left:clamp(24px,5vw,80px);
+  padding-bottom:64px}
 .ed-bleed-copy .ed-index{opacity:.25}
-.ed-bleed-copy .ed-h2{color:#fff;font-size:clamp(2.8rem,6vw,5rem)}
-.ed-bleed-copy .ed-p{color:rgba(255,255,255,.75);max-width:420px}
+.ed-bleed-copy .ed-h2{color:#fff;font-size:clamp(2.4rem,5vw,4.2rem);max-width:500px}
+.ed-bleed-copy .ed-p{color:rgba(255,255,255,.72);max-width:420px}
 
-/* ─── BLOCK 2: Image bleeds off right ─── */
-.ed-overflow-row{display:grid;grid-template-columns:1fr 1.4fr;align-items:center;
-  min-height:600px;overflow:hidden;padding:96px 0}
-.ed-overflow-text{padding: 0 0 0 clamp(24px,5vw,80px);position:relative;z-index:1}
-.ed-overflow-img{position:relative;margin-left:calc(50% - 50vw + 10px);overflow:hidden;border-radius:var(--r-lg) 0 0 var(--r-lg);
-  box-shadow:-24px 0 80px rgba(0,0,0,.4)}
-.ed-overflow-img img{width:100%;display:block;object-fit:cover;min-height:500px;
-  transition:transform 8s ease;will-change:transform}
+/* ─── BLOCK 2: Image partial bleed off left (RTL) ─── */
+.ed-overflow-row{display:grid;grid-template-columns:1fr 1.1fr;align-items:center;
+  gap:0;padding:96px 0;overflow:hidden;max-width:100%}
+.ed-overflow-text{padding:0 clamp(24px,5vw,80px) 0 clamp(24px,3vw,40px);position:relative;z-index:1}
+.ed-overflow-img{position:relative;overflow:hidden;border-radius:var(--r-xl);
+  box-shadow:0 24px 80px rgba(0,0,0,.35);margin-left:clamp(0px,3vw,32px)}
+.ed-overflow-img img{width:100%;display:block;object-fit:cover;object-position:center top;
+  min-height:460px;transition:transform 8s ease;will-change:transform}
 .ed-overflow-img:hover img{transform:scale(1.03)}
 
 /* ─── BLOCK 3: Oversized centered + floating tags ─── */
@@ -444,9 +447,9 @@ img{max-width:100%;display:block}
   .showcase-grid{grid-template-columns:1fr}
   .showcase-card--main{grid-column:span 1}
   .ed-overflow-row{grid-template-columns:1fr;gap:0;padding:64px 0}
-  .ed-overflow-text{padding:0 24px 40px}
-  .ed-overflow-img{margin-left:0;border-radius:var(--r-lg)}
-  .ed-overflow-img img{min-height:320px}
+  .ed-overflow-img{margin-left:0;border-radius:var(--r-lg);order:1}
+  .ed-overflow-img img{min-height:280px}
+  .ed-overflow-text{padding:32px 24px 0;order:2}
   .ed-float-row{grid-template-columns:1fr;gap:0;padding:64px 0}
   .ed-float-img{margin-right:0;border-radius:var(--r-lg);order:1}
   .ed-float-img img{min-height:280px}
