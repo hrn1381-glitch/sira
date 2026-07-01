@@ -249,11 +249,14 @@ img{max-width:100%;display:block}
 .hx-intro-title{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--c-t1);margin-bottom:10px}
 .hx-intro-sub{font-size:.88rem;color:var(--c-t3)}
 
-/* Pin container */
-#hx-pin{position:relative;overflow:hidden}
+/* Pin container — needs explicit height so GSAP can measure it; no overflow clip here */
+#hx-pin{position:relative;height:100vh}
 
-/* Horizontal track */
-.hx-track{display:flex;width:500vw;will-change:transform}
+/* Outer clip — prevents 500 vw track from creating horizontal scroll before pin kicks in */
+.hx-clip{overflow:hidden}
+
+/* Horizontal track — must be LTR so panels flow left→right even inside an RTL page */
+.hx-track{display:flex;width:500vw;will-change:transform;direction:ltr}
 
 /* Each panel: one viewport */
 .hx-panel{width:100vw;height:100vh;display:grid;grid-template-columns:1fr 1.5fr;
@@ -500,7 +503,8 @@ img{max-width:100%;display:block}
   .hx-panel-media{padding:0}
   .hx-ghost{font-size:5rem}
   /* on mobile disable horizontal scroll pin — show stacked */
-  #hx-pin{overflow:visible}
+  .hx-clip{overflow:visible}
+  #hx-pin{height:auto}
   .hx-track{flex-direction:column;width:100%;transform:none !important}
   .hx-panel{width:100%;border-bottom:1px solid var(--c-border)}
   .hx-progress,.hx-hint{display:none}
