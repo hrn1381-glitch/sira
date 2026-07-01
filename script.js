@@ -160,7 +160,7 @@
     {sel:'.price-card', stagger:0.1},
     {sel:'.faq-item',   stagger:0.06},
     {sel:'.showcase-card', stagger:0.1},
-    {sel:'.ed-scene-pills span', stagger:0.05}
+    {sel:'.vx-list li', stagger:0.06}
   ];
 
   revealGroups.forEach(function(g){
@@ -177,7 +177,7 @@
   });
 
   // Single element reveals
-  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.ed-bleed-copy','.ed-overflow-text','.ed-float-text','.ed-cinema-left','.ed-wide-header','.ed-wide-p','.ed-moments-intro','.ed-scene-glass','.ed-scene-finale-copy'];
+  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.ed-bleed-copy','.ed-overflow-text','.ed-float-text','.ed-cinema-left','.ed-wide-header','.ed-wide-p','.ed-moments-intro','.vx-header'];
   singles.forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el){
       gsap.set(el,{opacity:0,y:36});
@@ -220,6 +220,39 @@
       }
     });
   });
+
+  /* ─── Video showcase rows — directional slide-in ─── */
+  document.querySelectorAll('.vx-row').forEach(function(row){
+    var dir = row.getAttribute('data-dir');
+    var media = row.querySelector('.vx-media');
+    var info  = row.querySelector('.vx-info');
+    var xMedia = dir === 'right' ? 80 : -80;
+    gsap.set(media, {opacity:0, x:xMedia});
+    gsap.set(info,  {opacity:0, x: -xMedia * 0.5});
+    ScrollTrigger.create({
+      trigger: row,
+      start: 'top 82%',
+      once: true,
+      onEnter: function(){
+        gsap.to(media, {opacity:1, x:0, duration:.7, ease:'power3.out'});
+        gsap.to(info,  {opacity:1, x:0, duration:.65, ease:'power2.out', delay:.12});
+      }
+    });
+  });
+  var vxFinale = document.querySelector('.vx-finale');
+  if(vxFinale){
+    var fText = vxFinale.querySelector('.vx-finale-text');
+    var fVid  = vxFinale.querySelector('.vx-finale-video');
+    gsap.set(fText,{opacity:0,y:40});
+    gsap.set(fVid, {opacity:0,y:40,scale:.96});
+    ScrollTrigger.create({
+      trigger:vxFinale, start:'top 84%', once:true,
+      onEnter:function(){
+        gsap.to(fText,{opacity:1,y:0,duration:.65,ease:'power2.out'});
+        gsap.to(fVid, {opacity:1,y:0,scale:1,duration:.75,ease:'power2.out',delay:.18});
+      }
+    });
+  }
 
   /* ─── Editorial block image parallax ─── */
   ['.ed-bleed-img', '.ed-overflow-img img', '.ed-float-img img', '.ed-cinema-img img'].forEach(function(sel){

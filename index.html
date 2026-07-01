@@ -269,90 +269,107 @@
   </div>
 
   <!-- ═══ BLOCK 6: Video reel horizontal scroll ═══ -->
-  <!-- ═══ VIDEO MOMENTS ═══ -->
-  <div class="ed-moments">
+  <!-- ═══ VIDEO SHOWCASE ═══ -->
+  <div class="vx-wrap" id="vx-wrap">
 
-    <div class="ed-moments-intro container">
-      <span class="ed-moments-tag">در عمل ببینید</span>
-      <h2 class="ed-moments-title">سیرا در حال اجرا</h2>
+    <div class="vx-header container">
+      <span class="vx-tag">در عمل ببینید</span>
+      <h2 class="vx-title">سیرا در حال اجرا</h2>
     </div>
 
-    <!-- Moment 1 — text: bottom-right -->
-    <div class="ed-scene">
-      <video class="ed-scene-video" autoplay muted loop playsinline>
-        <source src="assets/demo-4.mp4" type="video/mp4">
-      </video>
-      <div class="ed-scene-dim"></div>
-      <div class="ed-scene-num">۰۱</div>
-      <div class="ed-scene-glass ed-scene-glass--br">
-        <h3 class="ed-scene-title">مانیتورینگ<br>لحظه‌ای اپراتورها</h3>
-        <p class="ed-scene-desc">هر اپراتور یک کارت زنده دارد — عکس، وضعیت، مدت تماس جاری. ترانک‌های ورودی و خروجی با IP و وضعیت اتصال. صف تماس با Static و Dynamic Agent به‌صورت همزمان.</p>
-        <div class="ed-scene-pills">
-          <span>وضعیت زنده</span><span>ترانک‌ها</span><span>صف تماس</span>
+    <!-- Row 1: video right (RTL first col), text left — slide in from right -->
+    <div class="vx-row" data-dir="right">
+      <div class="vx-media">
+        <div class="vx-num">۰۱</div>
+        <div class="vx-video-wrap">
+          <video autoplay muted loop playsinline><source src="assets/demo-4.mp4" type="video/mp4"></video>
         </div>
+      </div>
+      <div class="vx-info">
+        <h3 class="vx-h3">مانیتورینگ<br>لحظه‌ای</h3>
+        <p class="vx-p">هر اپراتور یک کارت زنده دارد — عکس، وضعیت و مدت تماس جاری. ترانک‌های ورودی و خروجی با IP، نوع و وضعیت اتصال. صف تماس با Static و Dynamic Agent به‌صورت همزمان.</p>
+        <ul class="vx-list">
+          <li>وضعیت آنلاین / مشغول / آفلاین با رنگ</li>
+          <li>نمایش IP و وضعیت هر ترانک</li>
+          <li>صف تماس لحظه‌ای</li>
+        </ul>
       </div>
     </div>
 
-    <!-- Moment 2 — text: bottom-left -->
-    <div class="ed-scene">
-      <video class="ed-scene-video" autoplay muted loop playsinline>
-        <source src="assets/demo-5.mp4" type="video/mp4">
-      </video>
-      <div class="ed-scene-dim ed-scene-dim--ltr"></div>
-      <div class="ed-scene-num ed-scene-num--l">۰۲</div>
-      <div class="ed-scene-glass ed-scene-glass--bl">
-        <h3 class="ed-scene-title">داشبورد<br>سه‌مانیتوره</h3>
-        <p class="ed-scene-desc">وضعیت سرور، منابع سیستم و نمودارهای تحلیلی — همزمان روی سه صفحه‌نمایش. برای مدیرانی که نیاز دارند همه چیز را در یک نگاه بدانند.</p>
-        <div class="ed-scene-pills">
-          <span>وضعیت سرور</span><span>مانیتورینگ</span><span>آنالیتیکس</span>
+    <!-- Row 2: video left, text right — slide in from left -->
+    <div class="vx-row vx-row--rev" data-dir="left">
+      <div class="vx-media">
+        <div class="vx-num">۰۲</div>
+        <div class="vx-video-wrap">
+          <video autoplay muted loop playsinline><source src="assets/demo-5.mp4" type="video/mp4"></video>
         </div>
+      </div>
+      <div class="vx-info">
+        <h3 class="vx-h3">داشبورد<br>سه‌مانیتوره</h3>
+        <p class="vx-p">وضعیت سرور، منابع سیستم و نمودارهای تحلیلی — همزمان روی سه صفحه‌نمایش. برای مدیرانی که نیاز دارند همه چیز را در یک نگاه بدانند، این داشبورد طراحی شده.</p>
+        <ul class="vx-list">
+          <li>وضعیت RAM / CPU / SWAP سرور</li>
+          <li>مانیتورینگ لحظه‌ای کنار آمار</li>
+          <li>نمودارهای تحلیلی جانبی</li>
+        </ul>
       </div>
     </div>
 
-    <!-- Moment 3 — text: center-right, tall -->
-    <div class="ed-scene ed-scene--tall">
-      <video class="ed-scene-video" autoplay muted loop playsinline>
-        <source src="assets/demo-2.mp4" type="video/mp4">
-      </video>
-      <div class="ed-scene-dim"></div>
-      <div class="ed-scene-num">۰۳</div>
-      <div class="ed-scene-glass ed-scene-glass--mr">
-        <h3 class="ed-scene-title">تحلیل صف‌های<br>تماس</h3>
-        <p class="ed-scene-desc">نمودار تعاملی مقایسه صف‌ها با تقویم شمسی. میانگین زمان انتظار، تعداد پاسخ‌داده‌شده و از‌دست‌رفته — هر آنچه برای بهینه‌سازی صف‌هایتان نیاز دارید.</p>
-        <div class="ed-scene-pills">
-          <span>تقویم شمسی</span><span>مقایسه صف</span><span>زمان انتظار</span>
+    <!-- Row 3: video right, text left -->
+    <div class="vx-row" data-dir="right">
+      <div class="vx-media">
+        <div class="vx-num">۰۳</div>
+        <div class="vx-video-wrap">
+          <video autoplay muted loop playsinline><source src="assets/demo-2.mp4" type="video/mp4"></video>
         </div>
+      </div>
+      <div class="vx-info">
+        <h3 class="vx-h3">تحلیل صف‌های<br>تماس</h3>
+        <p class="vx-p">نمودار تعاملی مقایسه صف‌ها با تقویم شمسی. میانگین زمان انتظار، تعداد پاسخ‌داده‌شده و از‌دست‌رفته در بازه‌های مختلف — هر آنچه برای بهینه‌سازی نیاز دارید.</p>
+        <ul class="vx-list">
+          <li>مقایسه همزمان چند صف</li>
+          <li>فیلتر بازه تاریخی شمسی</li>
+          <li>میانگین زمان انتظار</li>
+        </ul>
       </div>
     </div>
 
-    <!-- Moment 4 — text: center-left -->
-    <div class="ed-scene ed-scene--tall">
-      <video class="ed-scene-video" autoplay muted loop playsinline>
-        <source src="assets/demo-3.mp4" type="video/mp4">
-      </video>
-      <div class="ed-scene-dim ed-scene-dim--ltr"></div>
-      <div class="ed-scene-num ed-scene-num--l">۰۴</div>
-      <div class="ed-scene-glass ed-scene-glass--ml">
-        <h3 class="ed-scene-title">نمودار عملکرد<br>اپراتورها</h3>
-        <p class="ed-scene-desc">نمودارهای خطی چندگانه برای مقایسه مدت مکالمه، تعداد تماس‌ها و زمان انتظار. داده را به تفکیک اپراتور، صف یا بازه زمانی فیلتر کنید.</p>
-        <div class="ed-scene-pills">
-          <span>نمودار خطی</span><span>فیلتر اپراتور</span><span>مدت مکالمه</span>
+    <!-- Row 4: video left, text right -->
+    <div class="vx-row vx-row--rev" data-dir="left">
+      <div class="vx-media">
+        <div class="vx-num">۰۴</div>
+        <div class="vx-video-wrap">
+          <video autoplay muted loop playsinline><source src="assets/demo-3.mp4" type="video/mp4"></video>
         </div>
+      </div>
+      <div class="vx-info">
+        <h3 class="vx-h3">نمودار عملکرد<br>اپراتورها</h3>
+        <p class="vx-p">نمودارهای خطی چندگانه برای مقایسه مدت مکالمه، تعداد تماس‌ها و زمان انتظار. داده را به تفکیک اپراتور، صف یا بازه زمانی فیلتر کنید و الگوها را کشف کنید.</p>
+        <ul class="vx-list">
+          <li>نمودار خطی مقایسه‌ای</li>
+          <li>فیلتر اپراتور و صف</li>
+          <li>تفکیک روزانه / هفتگی</li>
+        </ul>
       </div>
     </div>
 
-    <!-- Moment 5 — text: center full-width bottom -->
-    <div class="ed-scene ed-scene--finale">
-      <video class="ed-scene-video" autoplay muted loop playsinline>
-        <source src="assets/demo-1.mp4" type="video/mp4">
-      </video>
-      <div class="ed-scene-dim ed-scene-dim--bottom"></div>
-      <div class="ed-scene-num">۰۵</div>
-      <div class="ed-scene-finale-copy">
-        <h3 class="ed-scene-title">تنظیمات سیستم<br>به زبان فارسی</h3>
-        <p class="ed-scene-desc">فرم‌های هوشمند، اعتبارسنجی خودکار و محیط کاربری RTL کاملاً فارسی. پیکربندی کامل مرکز تماس بدون هیچ واژه‌ای به زبان انگلیسی.</p>
-        <div class="ed-scene-pills">
-          <span>RTL فارسی</span><span>فرم هوشمند</span><span>دسترسی سطح‌بندی</span>
+    <!-- Row 5: full-width accent — video center, text below -->
+    <div class="vx-finale">
+      <div class="vx-finale-inner">
+        <div class="vx-finale-text">
+          <span class="vx-num vx-num--accent">۰۵</span>
+          <h3 class="vx-h3">تنظیمات سیستم<br>به زبان فارسی</h3>
+          <p class="vx-p">فرم‌های هوشمند با اعتبارسنجی خودکار، رابط RTL کامل، و دسترسی سطح‌بندی‌شده. بدون هیچ واژه انگلیسی.</p>
+          <ul class="vx-list">
+            <li>فرم‌های هوشمند با validation</li>
+            <li>دسترسی سطح‌بندی‌شده کاربران</li>
+            <li>نمایش وضعیت ماژول‌ها</li>
+          </ul>
+        </div>
+        <div class="vx-finale-video">
+          <div class="vx-video-wrap">
+            <video autoplay muted loop playsinline><source src="assets/demo-1.mp4" type="video/mp4"></video>
+          </div>
         </div>
       </div>
     </div>
