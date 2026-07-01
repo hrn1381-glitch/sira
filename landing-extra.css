@@ -1,0 +1,98 @@
+/* ============================================
+   LANDING PAGE — EXTRA STYLES
+   المان‌های تعاملی و بخش‌های جدید
+   ============================================ */
+
+/* ===== Hero Counters ===== */
+.hero-counters{display:flex;gap:32px;margin-top:36px;padding-top:28px;border-top:1px solid var(--glass-border)}
+.counter-item{display:flex;flex-direction:column;gap:2px}
+.counter-num{font-size:1.5rem;font-weight:900;background:var(--grad-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.counter-lbl{font-size:.75rem;color:var(--text-tertiary)}
+
+/* ===== Reporting Grid ===== */
+.reporting-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.reporting-card{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);
+  padding:24px;backdrop-filter:blur(10px);transition:var(--transition)}
+.reporting-card:hover{border-color:rgba(249,115,22,.3);transform:translateY(-3px)}
+.reporting-icon{font-size:1.5rem;margin-bottom:12px}
+.reporting-card h4{font-size:.95rem;font-weight:700;margin-bottom:6px}
+.reporting-card p{font-size:.82rem;color:var(--text-secondary);line-height:1.7}
+
+/* ===== UX Split ===== */
+.ux-split{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.ux-features{display:flex;flex-direction:column;gap:12px}
+.ux-item{display:flex;align-items:center;gap:12px;padding:14px 20px;border-radius:var(--radius-md);
+  background:var(--glass-bg);border:1px solid var(--glass-border);font-size:.9rem;font-weight:500;
+  transition:var(--transition)}
+.ux-item:hover{border-color:rgba(249,115,22,.3);background:rgba(249,115,22,.04)}
+.ux-check{color:var(--orange-500);font-weight:800;font-size:1.1rem}
+
+/* ===== Support Real ===== */
+.support-grid-real{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.support-card-real{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-lg);
+  padding:32px;text-align:center;backdrop-filter:blur(12px);transition:var(--transition)}
+.support-card-real:hover{transform:translateY(-4px);border-color:rgba(249,115,22,.3)}
+.support-card-real .support-icon{font-size:2.2rem;margin-bottom:12px}
+.support-card-real h4{font-size:1.05rem;font-weight:700;margin-bottom:8px}
+.support-phone{font-size:1.1rem;font-weight:800;direction:ltr;margin-bottom:8px;
+  background:var(--grad-orange);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.support-card-real p{font-size:.82rem;color:var(--text-secondary);line-height:1.7}
+
+/* ===== License Note ===== */
+.license-note{display:flex;gap:20px;align-items:center;margin-top:48px;padding:24px 32px;border-radius:var(--radius-lg);
+  background:var(--glass-bg);border:1px solid var(--glass-border);backdrop-filter:blur(10px)}
+.license-icon{font-size:2rem;flex-shrink:0}
+.license-note h4{font-size:.95rem;font-weight:700;margin-bottom:4px}
+.license-note p{font-size:.82rem;color:var(--text-secondary);line-height:1.7}
+
+/* ===== FAQ ===== */
+.faq-list{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.faq-item{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-md);overflow:hidden;transition:var(--transition)}
+.faq-item:hover{border-color:rgba(249,115,22,.2)}
+.faq-question{width:100%;display:flex;align-items:center;justify-content:space-between;padding:18px 24px;
+  font-size:.95rem;font-weight:600;color:var(--text-primary);background:none;border:none;cursor:pointer;
+  font-family:var(--font);text-align:right;transition:var(--transition)}
+.faq-question:hover{color:var(--orange-500)}
+.faq-arrow{font-size:.8rem;transition:transform .3s;color:var(--text-tertiary)}
+.faq-item.open .faq-arrow{transform:rotate(180deg);color:var(--orange-500)}
+.faq-answer{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.22,1,.36,1),padding .3s}
+.faq-item.open .faq-answer{max-height:200px;padding:0 24px 18px}
+.faq-answer p{font-size:.88rem;color:var(--text-secondary);line-height:1.8}
+
+/* ===== Consultation Form ===== */
+.consult-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+.consult-contact{display:flex;flex-direction:column;gap:12px;margin-top:8px}
+.consult-contact-item{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--text-secondary)}
+.consult-form-wrap{background:var(--glass-bg);border:1px solid var(--glass-border);border-radius:var(--radius-xl);
+  padding:36px;backdrop-filter:blur(12px)}
+.consult-form h3{font-size:1.1rem;font-weight:700;margin-bottom:20px}
+.form-group{margin-bottom:14px}
+.form-group input,.form-group textarea{width:100%;padding:12px 16px;border-radius:var(--radius-sm);
+  background:var(--bg-primary);border:1px solid var(--glass-border);color:var(--text-primary);
+  font-family:var(--font);font-size:.9rem;transition:var(--transition);resize:vertical}
+.form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--orange-500);box-shadow:0 0 0 3px rgba(249,115,22,.1)}
+.form-group input::placeholder,.form-group textarea::placeholder{color:var(--text-tertiary)}
+.form-success{margin-top:16px;padding:14px;border-radius:var(--radius-sm);background:rgba(40,200,64,.1);
+  border:1px solid rgba(40,200,64,.3);color:#28c840;font-size:.85rem;font-weight:600;text-align:center;
+  display:none}
+.form-success.show{display:block;animation:fadeIn .4s}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
+/* ===== WhatsApp FAB ===== */
+.whatsapp-fab{position:fixed;bottom:24px;left:24px;width:56px;height:56px;border-radius:50%;
+  background:#25d366;display:flex;align-items:center;justify-content:center;z-index:1500;
+  box-shadow:0 4px 20px rgba(37,211,102,.4);transition:var(--transition)}
+.whatsapp-fab:hover{transform:scale(1.1);box-shadow:0 8px 32px rgba(37,211,102,.5)}
+
+/* ===== Responsive ===== */
+@media(max-width:1024px){
+  .reporting-cards{grid-template-columns:repeat(2,1fr)}
+  .ux-split,.consult-grid{grid-template-columns:1fr}
+  .hero-counters{justify-content:center}
+}
+@media(max-width:768px){
+  .reporting-cards,.support-grid-real{grid-template-columns:1fr}
+  .hero-counters{flex-direction:column;align-items:center;gap:16px;text-align:center}
+  .consult-form-wrap{padding:24px}
+  .license-note{flex-direction:column;text-align:center}
+}

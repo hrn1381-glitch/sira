@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>جزئیات محصول | سیرا</title>
+<meta name="description" content="مشاهده جزئیات و خرید ماژول‌های سیرا">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<!-- Background Orbs -->
+<div class="bg-orbs">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<!-- ============================
+     NAVBAR
+     ============================ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">SIRRA</a>
+    <div class="nav-links">
+      <a href="index.html">صفحه اصلی</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="index.html#features">امکانات</a>
+      <a href="index.html#support">پشتیبانی</a>
+      <a href="index.html#pricing">قیمت‌گذاری</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">🌙</button>
+      <a href="shop.html" class="btn btn-primary">فروشگاه</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="منو">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">صفحه اصلی</a>
+  <a href="shop.html">فروشگاه</a>
+  <a href="index.html#features">امکانات</a>
+  <a href="index.html#support">پشتیبانی</a>
+  <a href="index.html#pricing">قیمت‌گذاری</a>
+</div>
+
+<!-- ============================
+     PRODUCT DETAIL
+     محتوا از shop.js > PRODUCTS رندر میشه بر اساس ?id=
+     ============================ -->
+<section class="product-detail" id="productDetail">
+  <div class="container">
+
+    <!-- Breadcrumb -->
+    <div style="margin-bottom:32px;font-size:.85rem;color:var(--text-tertiary)">
+      <a href="index.html" style="color:var(--text-secondary)">خانه</a>
+      <span style="margin:0 8px">←</span>
+      <a href="shop.html" style="color:var(--text-secondary)">فروشگاه</a>
+      <span style="margin:0 8px">←</span>
+      <span id="breadcrumbName" style="color:var(--orange-500)"></span>
+    </div>
+
+    <div class="product-detail-grid">
+
+      <!-- Gallery -->
+      <div class="gallery">
+        <div class="gallery-main" id="galleryMain"></div>
+        <div class="gallery-thumbs" id="galleryThumbs"></div>
+      </div>
+
+      <!-- Detail Info -->
+      <div class="detail-info">
+        <div class="detail-category" id="detailCategory"></div>
+        <h1 class="detail-name" id="detailName"></h1>
+        <div class="detail-rating">
+          <span class="stars" id="detailStars"></span>
+          <span class="rating-text" id="detailRatingText"></span>
+        </div>
+        <p class="detail-desc" id="detailDesc"></p>
+
+        <!-- Price Box -->
+        <div class="detail-price-box">
+          <div class="detail-price-row">
+            <span class="detail-price-current" id="detailPriceCurrent"></span>
+            <span class="detail-price-old" id="detailPriceOld"></span>
+          </div>
+          <span class="detail-discount-badge" id="detailDiscountBadge"></span>
+          <div class="detail-price-note">قیمت شامل مالیات بر ارزش افزوده نمی‌باشد</div>
+        </div>
+
+        <!-- Features -->
+        <div class="detail-features">
+          <h4>ویژگی‌های کلیدی:</h4>
+          <ul class="detail-feature-list" id="detailFeatureList"></ul>
+        </div>
+
+        <!-- Actions -->
+        <div class="detail-actions">
+          <button class="btn btn-primary btn-lg" id="detailAddCart">🛒 افزودن به سبد خرید</button>
+          <a href="shop.html" class="btn btn-outline btn-lg">بازگشت به فروشگاه</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabs -->
+    <div class="detail-tabs">
+      <div class="tabs-nav">
+        <button class="tab-btn active" data-tab="tabDescription" onclick="switchTab('tabDescription')">توضیحات کامل</button>
+        <button class="tab-btn" data-tab="tabRequirements" onclick="switchTab('tabRequirements')">پیش‌نیازها</button>
+      </div>
+      <div class="tab-content active" id="tabDescription"></div>
+      <div class="tab-content" id="tabRequirements"></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============================
+     CART SIDEBAR
+     ============================ -->
+<div class="cart-overlay"></div>
+<div class="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 سبد خرید <span class="cart-count">0</span></h3>
+    <button class="cart-close">✕</button>
+  </div>
+  <div class="cart-body"></div>
+  <div class="cart-footer"></div>
+</div>
+
+<!-- Cart FAB -->
+<button class="cart-fab" aria-label="سبد خرید">
+  🛒
+  <span class="cart-fab-badge">0</span>
+</button>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>© تمامی حقوق محفوظ است. سیرا - نرم‌افزار مرکز تماس هوشمند | SIRRA Call Center</p>
+  </div>
+</footer>
+
+<script src="shop.js"></script>
+<script>
+  // Set breadcrumb name after product loads
+  const params = new URLSearchParams(window.location.search);
+  const breadcrumb = document.getElementById('breadcrumbName');
+  const nameEl = document.getElementById('detailName');
+  if (nameEl && breadcrumb) {
+    const obs = new MutationObserver(() => {
+      if (nameEl.textContent) {
+        breadcrumb.textContent = nameEl.textContent;
+        document.title = nameEl.textContent + ' | سیرا';
+        obs.disconnect();
+      }
+    });
+    obs.observe(nameEl, { childList: true });
+  }
+</script>
+</body>
+</html>

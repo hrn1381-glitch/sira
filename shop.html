@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>فروشگاه ماژول‌ها | سیرا</title>
+<meta name="description" content="ماژول‌های حرفه‌ای سیرا برای ارتقای مرکز تماس شما. گزارش‌گیری، مدیریت صف، ضبط مکالمات و بیشتر.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<!-- Background Orbs -->
+<div class="bg-orbs">
+  <div class="orb"></div>
+  <div class="orb"></div>
+  <div class="orb"></div>
+</div>
+
+<!-- ============================
+     NAVBAR
+     ============================ -->
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">SIRRA</a>
+    <div class="nav-links">
+      <a href="index.html">صفحه اصلی</a>
+      <a href="shop.html" style="color:var(--orange-500)">فروشگاه</a>
+      <a href="index.html#features">امکانات</a>
+      <a href="index.html#support">پشتیبانی</a>
+      <a href="index.html#pricing">قیمت‌گذاری</a>
+    </div>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="تغییر تم">🌙</button>
+      <a href="index.html#pricing" class="btn btn-primary">شروع رایگان</a>
+      <button class="mobile-toggle" id="mobileToggle" aria-label="منو">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" id="mobileClose">✕</button>
+  <a href="index.html">صفحه اصلی</a>
+  <a href="shop.html">فروشگاه</a>
+  <a href="index.html#features">امکانات</a>
+  <a href="index.html#support">پشتیبانی</a>
+  <a href="index.html#pricing">قیمت‌گذاری</a>
+</div>
+
+<!-- ============================
+     SHOP HERO
+     ============================ -->
+<section class="shop-hero">
+  <div class="container">
+    <div class="hero-badge" style="margin:0 auto 24px">
+      <span class="dot"></span>
+      ماژول‌های حرفه‌ای سیرا
+    </div>
+    <h1>فروشگاه <span class="highlight">ماژول‌ها</span></h1>
+    <p>مرکز تماس خود را با ماژول‌های تخصصی ارتقا دهید. هر ماژول برای حل یک نیاز واقعی طراحی شده است.</p>
+  </div>
+</section>
+
+<!-- ============================
+     TOOLBAR & PRODUCTS
+     محصولات از shop.js > PRODUCTS رندر میشن
+     ============================ -->
+<section class="section" style="padding-top:0">
+  <div class="container">
+    <div class="shop-toolbar" id="shopToolbar"></div>
+    <div class="products-grid" id="productsGrid"></div>
+  </div>
+</section>
+
+<!-- ============================
+     CART SIDEBAR
+     ============================ -->
+<div class="cart-overlay"></div>
+<div class="cart-sidebar">
+  <div class="cart-header">
+    <h3>🛒 سبد خرید <span class="cart-count">0</span></h3>
+    <button class="cart-close">✕</button>
+  </div>
+  <div class="cart-body"></div>
+  <div class="cart-footer"></div>
+</div>
+
+<!-- Cart FAB -->
+<button class="cart-fab" aria-label="سبد خرید">
+  🛒
+  <span class="cart-fab-badge">0</span>
+</button>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>© تمامی حقوق محفوظ است. سیرا - نرم‌افزار مرکز تماس هوشمند | SIRRA Call Center</p>
+  </div>
+</footer>
+
+<script src="shop.js"></script>
+</body>
+</html>

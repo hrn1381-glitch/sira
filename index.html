@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>سیرا — نرم‌افزار مرکز تماس هوشمند</title>
+<meta name="description" content="سیرا، نرم‌افزار مرکز تماس هوشمند، کاملاً فارسی. نسخه رایگان بدون محدودیت زمانی.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#" class="header-logo">SIRRA</a>
+    <nav class="header-nav" id="headerNav">
+      <a href="#features">امکانات</a>
+      <a href="#reporting">گزارش‌ها</a>
+      <a href="shop.html">فروشگاه</a>
+      <a href="#support">پشتیبانی</a>
+      <a href="#pricing">قیمت</a>
+    </nav>
+    <div class="header-end">
+      <button class="theme-btn" id="themeToggle" aria-label="تغییر تم">
+        <svg class="ico-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"/></svg>
+        <svg class="ico-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </button>
+      <a href="#consult" class="header-cta">مشاوره رایگان</a>
+      <button class="burger" id="burger" aria-label="منو"><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Overlay -->
+<div class="mob-overlay" id="mobOverlay">
+  <nav class="mob-nav">
+    <a href="#features">امکانات</a>
+    <a href="#reporting">گزارش‌ها</a>
+    <a href="shop.html">فروشگاه</a>
+    <a href="#support">پشتیبانی</a>
+    <a href="#pricing">قیمت</a>
+    <a href="#consult" class="mob-cta">مشاوره رایگان</a>
+  </nav>
+</div>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero hero--cinematic">
+  <img src="assets/hero-bg.jpg" alt="" class="hero-bg" loading="eager">
+  <div class="hero-overlay"></div>
+  <div class="hero-content container">
+    <div class="hero-glass">
+      <div class="hero-chip">
+        <span class="chip-dot"></span>
+        نسخه رایگان · بدون محدودیت زمانی
+      </div>
+      <h1 class="hero-h1">
+        مدیریت هوشمند<br><span class="hero-accent">مرکز تماس</span> شما
+      </h1>
+      <p class="hero-p">سیرا دستیار هوشمندی است که همیشه منتظرش بودید. از مدیریت تماس و پیام‌رسانی تا تیکتینگ و گزارش‌گیری پیشرفته — همه در یک پلتفرم یکپارچه فارسی.</p>
+      <div class="hero-btns">
+        <a href="#pricing" class="btn-fill">دریافت رایگان
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#consult" class="btn-line">مشاوره رایگان</a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-fade"></div>
+</section>
+
+<!-- ===================== TRUST STRIP ===================== -->
+<section class="strip">
+  <div class="strip-track">
+    <div class="strip-content">
+      <span>کاملاً فارسی و بومی</span><span class="strip-sep">—</span>
+      <span>تاریخ شمسی</span><span class="strip-sep">—</span>
+      <span>نصب در ۵ دقیقه</span><span class="strip-sep">—</span>
+      <span>امنیت پیشرفته</span><span class="strip-sep">—</span>
+      <span>معماری MVC</span><span class="strip-sep">—</span>
+      <span>توسعه‌پذیر</span><span class="strip-sep">—</span>
+      <span>بروزرسانی مداوم</span><span class="strip-sep">—</span>
+      <span>کاملاً فارسی و بومی</span><span class="strip-sep">—</span>
+      <span>تاریخ شمسی</span><span class="strip-sep">—</span>
+      <span>نصب در ۵ دقیقه</span><span class="strip-sep">—</span>
+      <span>امنیت پیشرفته</span><span class="strip-sep">—</span>
+      <span>معماری MVC</span><span class="strip-sep">—</span>
+      <span>توسعه‌پذیر</span><span class="strip-sep">—</span>
+      <span>بروزرسانی مداوم</span><span class="strip-sep">—</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== STATS ===================== -->
+<section class="sec" id="stats">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-block">
+        <span class="stat-num" data-to="1500">0</span>
+        <span class="stat-unit">+</span>
+        <span class="stat-lbl">سازمان فعال</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num" data-to="98.7">0</span>
+        <span class="stat-unit">٪</span>
+        <span class="stat-lbl">آپتایم سرویس</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num" data-to="24">0</span>
+        <span class="stat-unit">/۷</span>
+        <span class="stat-lbl">پشتیبانی</span>
+      </div>
+      <div class="stat-block">
+        <span class="stat-num" data-to="5">0</span>
+        <span class="stat-unit">دقیقه</span>
+        <span class="stat-lbl">زمان نصب</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURES ===================== -->
+<section class="sec sec--alt" id="features">
+  <div class="container">
+    <div class="sec-top">
+      <span class="sec-label">امکانات کلیدی</span>
+      <h2 class="sec-h2">هر آنچه نیاز دارید، یکجا</h2>
+      <p class="sec-p">از ابزارهای روزمره تا ماژول‌های تخصصی، همه در یک پلتفرم.</p>
+    </div>
+    <div class="bento">
+      <div class="bento-item bento-wide">
+        <div class="bi-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+        </div>
+        <h3>داشبورد زنده</h3>
+        <p>مانیتورینگ لحظه‌ای تماس‌ها، صف‌ها و عملکرد اپراتورها با نمودارهای تعاملی و داده‌های آنی.</p>
+      </div>
+      <div class="bento-item">
+        <div class="bi-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>مدیریت اپراتورها</h3>
+        <p>ارزیابی عملکرد، تخصیص خودکار تماس و نظارت بر کیفیت مکالمات.</p>
+      </div>
+      <div class="bento-item">
+        <div class="bi-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+        </div>
+        <h3>امنیت پیشرفته</h3>
+        <p>احراز هویت چندلایه، سطوح دسترسی دقیق و رمزنگاری داده‌ها.</p>
+      </div>
+      <div class="bento-item">
+        <div class="bi-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <h3>تاریخ شمسی</h3>
+        <p>پشتیبانی کامل از تقویم شمسی و استانداردهای بومی ایران.</p>
+      </div>
+      <div class="bento-item bento-wide">
+        <div class="bi-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+        </div>
+        <h3>ماژول‌های کاربردی</h3>
+        <p>گزارش‌گیری، مدیریت صف، ضبط مکالمات، نظرسنجی و ده‌ها ماژول دیگر در یک محیط یکپارچه. هر ماژول مستقل قابل فعال‌سازی است.</p>
+      </div>
+      <div class="bento-item">
+        <div class="bi-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        </div>
+        <h3>معماری استاندارد</h3>
+        <p>ساختار MVC تمیز، توسعه‌پذیر و قابل سفارشی‌سازی کامل.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SHOWCASE ===================== -->
+<section class="sec" id="showcase">
+  <div class="container">
+    <div class="sec-top">
+      <span class="sec-label">سیرا در عمل</span>
+      <h2 class="sec-h2">نگاهی به محیط واقعی نرم‌افزار</h2>
+      <p class="sec-p">از داشبورد مدیریتی تا گزارش‌های تحلیلی — همه چیز در یک نگاه.</p>
+    </div>
+
+    <!-- Full-width hero image: 3 monitors -->
+    <div class="showcase-hero">
+      <img src="assets/screenshot-multiscreen.jpg" alt="نمای سه مانیتوره داشبورد سیرا — مانیتورینگ اپراتورها، وضعیت سرور و تحلیل تماس‌ها" loading="lazy">
+      <div class="showcase-hero-caption">
+        <h3>دید کامل بر مرکز تماس</h3>
+        <p>با سیرا، تمام اطلاعات مرکز تماس خود را روی چند مانیتور به‌صورت همزمان مشاهده کنید: وضعیت منابع سرور، مانیتورینگ لحظه‌ای اپراتورها و ترانک‌ها، و تحلیل آماری تماس‌ها — همه در لحظه.</p>
+      </div>
+    </div>
+
+    <!-- Feature cards with images and descriptions -->
+    <div class="showcase-features">
+
+      <div class="sf-card">
+        <div class="sf-media">
+          <img src="assets/screenshot-monitoring.jpg" alt="صفحه مانیتورینگ سیرا — وضعیت اپراتورها و ترانک‌ها" loading="lazy">
+        </div>
+        <div class="sf-info">
+          <h4>مانیتورینگ لحظه‌ای</h4>
+          <p>وضعیت هر اپراتور (آنلاین، مشغول، آفلاین) را به‌صورت زنده ببینید. ترانک‌های ورودی و خروجی، صف‌های تماس و اطلاعات تماس‌گیرنده — همه در یک داشبورد.</p>
+          <ul>
+            <li>وضعیت لحظه‌ای اپراتورها با عکس پروفایل</li>
+            <li>نمایش ترانک‌ها با IP، نوع و وضعیت اتصال</li>
+            <li>صف تماس با شماره‌های Static و Dynamic Agent</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sf-card sf-card--reverse">
+        <div class="sf-media">
+          <img src="assets/screenshot-queue-charts.jpg" alt="نمودار تحلیلی صف‌های مرکز تماس سیرا" loading="lazy">
+        </div>
+        <div class="sf-info">
+          <h4>تحلیل صف‌های تماس</h4>
+          <p>نمودارهای تعاملی مقایسه صف‌ها با تقویم شمسی. میانگین زمان انتظار، تعداد تماس‌های پاسخ‌داده‌شده و ازدست‌رفته را به تفکیک ماه، هفته و روز بررسی کنید.</p>
+          <ul>
+            <li>مقایسه عملکرد صف‌ها در بازه‌های زمانی مختلف</li>
+            <li>فیلتر پیشرفته بر اساس نوع گزارش و بازه تاریخی</li>
+            <li>تقویم شمسی با محور زمانی فارسی</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sf-card">
+        <div class="sf-media">
+          <img src="assets/screenshot-analytics.jpg" alt="گزارش تحلیلی تماس‌ها در سیرا" loading="lazy">
+        </div>
+        <div class="sf-info">
+          <h4>گزارش‌های تحلیلی پیشرفته</h4>
+          <p>تحلیل دقیق عملکرد تماس‌ها، مقایسه آمار روزانه و شناسایی الگوهای ترافیک. نمودارهای خطی چندگانه برای مقایسه هم‌زمان شاخص‌های مختلف.</p>
+          <ul>
+            <li>نمودار مقایسه‌ای مدت مکالمه، تعداد تماس و زمان انتظار</li>
+            <li>تفکیک داده‌ها بر اساس اپراتور، صف و بازه زمانی</li>
+            <li>خروجی گزارش در فرمت Excel و PDF</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="sf-card sf-card--reverse">
+        <div class="sf-media">
+          <img src="assets/screenshot-settings.jpg" alt="تنظیمات و فرم‌های مدیریتی سیرا" loading="lazy">
+        </div>
+        <div class="sf-info">
+          <h4>پنل مدیریت کامل فارسی</h4>
+          <p>محیطی کاملاً فارسی و بومی‌شده برای تنظیمات سیستم. از ثبت اطلاعات مشتریان تا پیکربندی ماژول‌ها — بدون نیاز به دانش فنی انگلیسی.</p>
+          <ul>
+            <li>فرم‌های هوشمند با اعتبارسنجی خودکار</li>
+            <li>رابط کاربری RTL کاملاً فارسی</li>
+            <li>دسترسی سطح‌بندی‌شده برای هر کاربر</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Video demos -->
+    <div class="showcase-videos">
+      <h3 class="sv-title">دموی ویدئویی</h3>
+      <div class="sv-grid">
+        <div class="sv-item">
+          <video autoplay muted loop playsinline>
+            <source src="assets/demo-4.mp4" type="video/mp4">
+          </video>
+          <div class="sv-desc">
+            <h5>مانیتورینگ اپراتورها</h5>
+            <p>نمایش زنده وضعیت اپراتورها، ترانک‌ها و صف تماس در داشبورد مدیریتی سیرا.</p>
+          </div>
+        </div>
+        <div class="sv-item">
+          <video autoplay muted loop playsinline>
+            <source src="assets/demo-5.mp4" type="video/mp4">
+          </video>
+          <div class="sv-desc">
+            <h5>داشبورد سه‌مانیتوره</h5>
+            <p>وضعیت سرور، مانیتورینگ و تحلیل تماس‌ها — همه در یک نگاه روی سه صفحه‌نمایش.</p>
+          </div>
+        </div>
+        <div class="sv-item">
+          <video autoplay muted loop playsinline>
+            <source src="assets/demo-2.mp4" type="video/mp4">
+          </video>
+          <div class="sv-desc">
+            <h5>تحلیل صف‌ها</h5>
+            <p>نمودار مقایسه‌ای صف‌های مرکز تماس با تقویم شمسی و فیلترهای پیشرفته.</p>
+          </div>
+        </div>
+        <div class="sv-item">
+          <video autoplay muted loop playsinline>
+            <source src="assets/demo-3.mp4" type="video/mp4">
+          </video>
+          <div class="sv-desc">
+            <h5>نمودار عملکرد</h5>
+            <p>تحلیل خطی مدت مکالمه و تعداد تماس‌ها به تفکیک روز و اپراتور.</p>
+          </div>
+        </div>
+        <div class="sv-item">
+          <video autoplay muted loop playsinline>
+            <source src="assets/demo-1.mp4" type="video/mp4">
+          </video>
+          <div class="sv-desc">
+            <h5>تنظیمات سیستم</h5>
+            <p>پنل مدیریت فارسی با فرم‌های هوشمند و محیط کاربری ساده و قابل‌فهم.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== REPORTING ===================== -->
+<section class="sec sec--alt" id="reporting">
+  <div class="container">
+    <div class="split">
+      <div class="split-text">
+        <span class="sec-label">گزارش‌گیری پیشرفته</span>
+        <h2 class="sec-h2">گزارش‌های جامع و تحلیلی</h2>
+        <p class="sec-p">جزئیات تمام تماس‌های ورودی، خروجی و از‌ دست‌ رفته را بررسی کنید. بدانید هر تماس چه زمانی برقرار شده، توسط کدام اپراتور پاسخ داده شده و چه مدتی طول انجامیده.</p>
+        <ul class="check-list">
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            گزارش کامل تماس‌ها با جزئیات دقیق
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            جستجوی هوشمند بر اساس شماره، داخلی و تاریخ
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            تقویم شمسی با تفکیک روزانه، هفتگی و ماهانه
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            تحلیل عملکرد هر اپراتور
+          </li>
+          <li>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            خروجی Excel و PDF
+          </li>
+        </ul>
+      </div>
+      <div class="split-visual">
+        <div class="media-frame">
+          <video autoplay muted loop playsinline>
+            <source src="assets/demo-1.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SETUP ===================== -->
+<section class="sec sec--alt" id="setup">
+  <div class="container">
+    <div class="sec-top">
+      <span class="sec-label">نصب آسان</span>
+      <h2 class="sec-h2">در چند دقیقه آماده شوید</h2>
+      <p class="sec-p">بدون نیاز به دانش فنی پیچیده. مراحل ساده را دنبال کنید.</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-marker">۱</div>
+        <h4>دریافت لایسنس</h4>
+        <p>تهیه لایسنس رایگان یا حرفه‌ای از سایت سیرا.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">۲</div>
+        <h4>نصب روی سرور</h4>
+        <p>نصب سریع با مستندات کامل فارسی.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">۳</div>
+        <h4>پیکربندی اولیه</h4>
+        <p>تنظیمات ساده و محیط فارسی آماده.</p>
+      </div>
+      <div class="tl-item">
+        <div class="tl-marker">۴</div>
+        <h4>شروع کار</h4>
+        <p>مرکز تماس شما فعال است!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SUPPORT ===================== -->
+<section class="sec" id="support">
+  <div class="container">
+    <div class="sec-top">
+      <span class="sec-label">پشتیبانی</span>
+      <h2 class="sec-h2">همیشه در کنار شما</h2>
+      <p class="sec-p">از هر راهی که راحت‌تر هستید با ما در ارتباط باشید.</p>
+    </div>
+    <div class="channels">
+      <a href="tel:02167241000" class="ch-card">
+        <div class="ch-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        </div>
+        <h4>تماس مستقیم</h4>
+        <span class="ch-val" dir="ltr">021-6724-1000</span>
+        <p>ارتباط سریع با کارشناسان فنی</p>
+      </a>
+      <a href="https://wa.me/982167241000" target="_blank" class="ch-card">
+        <div class="ch-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </div>
+        <h4>واتساپ</h4>
+        <span class="ch-val">پاسخ فوری</span>
+        <p>دریافت راهنمایی سریع در واتساپ</p>
+      </a>
+      <a href="#consult" class="ch-card">
+        <div class="ch-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <h4>تیکت پشتیبانی</h4>
+        <span class="ch-val">سامانه آنلاین</span>
+        <p>ثبت درخواست و پیگیری آسان</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRICING ===================== -->
+<section class="sec sec--alt" id="pricing">
+  <div class="container">
+    <div class="sec-top">
+      <span class="sec-label">قیمت‌گذاری</span>
+      <h2 class="sec-h2">رایگان شروع کنید</h2>
+      <p class="sec-p">نسخه رایگان بدون محدودیت زمانی. روی هر سرور یا کامپیوتری قابل نصب.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-card">
+        <h3>رایگان</h3>
+        <div class="price-val">۰ <small>تومان</small></div>
+        <span class="price-sub">بدون محدودیت زمانی</span>
+        <ul>
+          <li>امکانات اصلی مرکز تماس</li>
+          <li>داشبورد مدیریتی</li>
+          <li>گزارش‌گیری پایه</li>
+          <li>تاریخ شمسی</li>
+          <li>پشتیبانی تیکت</li>
+        </ul>
+        <a href="#" class="btn-line" style="width:100%;justify-content:center">دریافت رایگان</a>
+      </div>
+      <div class="price-card price-card--pro">
+        <span class="price-tag">پیشنهاد ویژه</span>
+        <h3>حرفه‌ای</h3>
+        <div class="price-val">تماس بگیرید</div>
+        <span class="price-sub">لایسنس سازمانی</span>
+        <ul>
+          <li>تمام امکانات نسخه رایگان</li>
+          <li>ماژول‌های پیشرفته</li>
+          <li>گزارش‌های تحلیلی کامل</li>
+          <li>پشتیبانی تلفنی و واتساپ</li>
+          <li>بروزرسانی و توسعه اختصاصی</li>
+        </ul>
+        <a href="#consult" class="btn-fill" style="width:100%;justify-content:center">درخواست مشاوره
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="sec" id="faq">
+  <div class="container container--narrow">
+    <div class="sec-top">
+      <span class="sec-label">سوالات متداول</span>
+      <h2 class="sec-h2">پاسخ به پرسش‌های شما</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>آیا نسخه رایگان محدودیت زمانی دارد؟</span>
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>خیر. نسخه رایگان سیرا بدون هیچ محدودیت زمانی در اختیار شماست و می‌توانید تا هر زمان که بخواهید از آن استفاده کنید.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>آیا سیرا از تاریخ شمسی پشتیبانی می‌کند؟</span>
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>بله. تمامی بخش‌ها و گزارش‌ها با تقویم شمسی کار می‌کنند.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>نصب سیرا چقدر زمان می‌برد؟</span>
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>معمولاً کمتر از ۱۰ دقیقه. مستندات نصب به‌صورت کامل و فارسی موجود است.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>چطور لایسنس حرفه‌ای تهیه کنم؟</span>
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>از طریق فرم مشاوره، تیکت یا تماس تلفنی. لایسنس در کوتاه‌ترین زمان صادر می‌شود.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          <span>امکان ارتقا از رایگان به حرفه‌ای وجود دارد؟</span>
+          <svg class="faq-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <div class="faq-a"><p>بله. هر زمان با تهیه لایسنس حرفه‌ای، ماژول‌های بیشتری فعال می‌شوند بدون از دست رفتن تنظیمات.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONSULT ===================== -->
+<section class="sec sec--alt" id="consult">
+  <div class="container">
+    <div class="split split--reverse">
+      <div class="split-text">
+        <span class="sec-label">مشاوره رایگان</span>
+        <h2 class="sec-h2">همکاران ما آماده‌اند</h2>
+        <p class="sec-p">با راهنمایی حرفه‌ای و رایگان، بهترین راه‌حل را برای سازمان خود پیدا کنید. ما فروش را پایان کار نمی‌دانیم؛ شروع یک تعهد پایدار است.</p>
+        <div class="contact-items">
+          <div class="ci">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            <span dir="ltr">021-6724-1000</span>
+          </div>
+          <div class="ci">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+            <span>پشتیبانی واتساپ</span>
+          </div>
+        </div>
+      </div>
+      <form class="form-card" id="consultForm">
+        <h3>درخواست مشاوره</h3>
+        <div class="field">
+          <input type="text" id="fName" placeholder=" " required>
+          <label for="fName">نام و نام خانوادگی</label>
+        </div>
+        <div class="field">
+          <input type="tel" id="fPhone" placeholder=" " required>
+          <label for="fPhone">شماره تماس</label>
+        </div>
+        <div class="field">
+          <input type="text" id="fOrg" placeholder=" ">
+          <label for="fOrg">نام سازمان (اختیاری)</label>
+        </div>
+        <div class="field">
+          <textarea id="fMsg" rows="3" placeholder=" "></textarea>
+          <label for="fMsg">توضیحات (اختیاری)</label>
+        </div>
+        <button type="submit" class="btn-fill" style="width:100%;justify-content:center">ارسال درخواست
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </button>
+        <div class="form-ok" id="formOk">درخواست شما ثبت شد. به‌زودی تماس می‌گیریم.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="cta-end">
+  <div class="container">
+    <h2>تجربه‌ای <span class="hero-accent">فراتر از انتظار</span></h2>
+    <p>همه ابزارهای ارتباطی و مدیریتی در یک نرم‌افزار یکپارچه.</p>
+    <div class="cta-btns">
+      <a href="#pricing" class="btn-fill btn-fill--lg">دریافت رایگان سیرا
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </a>
+      <a href="#consult" class="btn-line btn-line--lg">مشاوره رایگان</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container footer-row">
+    <span class="footer-brand">SIRRA</span>
+    <p>© تمامی حقوق محفوظ است. سیرا — نرم‌افزار مرکز تماس هوشمند</p>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a href="https://wa.me/982167241000" target="_blank" class="wa-fab" aria-label="واتساپ">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
