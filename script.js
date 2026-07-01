@@ -160,8 +160,7 @@
     {sel:'.price-card', stagger:0.1},
     {sel:'.faq-item',   stagger:0.06},
     {sel:'.showcase-card', stagger:0.1},
-    {sel:'.sf-card',       stagger:0.12},
-    {sel:'.sv-item',       stagger:0.08}
+    {sel:'.vx-list li', stagger:0.06}
   ];
 
   revealGroups.forEach(function(g){
@@ -178,7 +177,7 @@
   });
 
   // Single element reveals
-  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.showcase-hero','.sv-title'];
+  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.ed-bleed-copy','.ed-overflow-text','.ed-float-text','.ed-cinema-left','.ed-wide-header','.ed-wide-p','.ed-moments-intro','.vx-header'];
   singles.forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el){
       gsap.set(el,{opacity:0,y:36});
@@ -219,6 +218,48 @@
           }
         });
       }
+    });
+  });
+
+  /* ─── Horizontal scroll video section ─── */
+  var hxPin   = document.getElementById('hx-pin');
+  var hxTrack = document.querySelector('.hx-track');
+  var hxFill  = document.getElementById('hxProgress');
+  var hxHint  = document.getElementById('hxHint');
+  if(hxPin && hxTrack && window.innerWidth > 768){
+    var hxPanels = hxTrack.querySelectorAll('.hx-panel');
+    var hxTotal  = (hxPanels.length - 1) * window.innerWidth;
+
+    // RTL layout: panel 1 is rightmost in the flex row.
+    // Start track at -hxTotal so panel 1 is visible; scroll moves it toward 0
+    // which reveals panels 2→5 entering from the left (Persian reading direction).
+    gsap.set(hxTrack, {x: -hxTotal});
+
+    ScrollTrigger.create({
+      trigger: hxPin,
+      start: 'top top',
+      end: '+=' + hxTotal,
+      pin: true,
+      scrub: 1.2,
+      onUpdate: function(self){
+        gsap.set(hxTrack, {x: (self.progress - 1) * hxTotal});
+        if(hxFill) hxFill.style.width = (self.progress * 100) + '%';
+        if(hxHint){
+          hxHint.style.opacity = self.progress > 0.04 ? '0' : '1';
+        }
+      }
+    });
+  }
+
+  /* ─── Editorial block image parallax ─── */
+  ['.ed-bleed-img', '.ed-overflow-img img', '.ed-float-img img', '.ed-cinema-img img'].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){
+      gsap.to(el,{
+        yPercent: -8,
+        ease:'none',
+        scrollTrigger:{trigger:el.closest('.ed-bleed,.ed-overflow-row,.ed-float-row,.ed-cinema') || el,
+          start:'top bottom',end:'bottom top',scrub:1.5}
+      });
     });
   });
 
