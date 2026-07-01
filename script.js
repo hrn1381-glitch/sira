@@ -221,35 +221,27 @@
     });
   });
 
-  /* ─── Video showcase rows — directional slide-in ─── */
-  document.querySelectorAll('.vx-row').forEach(function(row){
-    var dir = row.getAttribute('data-dir');
-    var media = row.querySelector('.vx-media');
-    var info  = row.querySelector('.vx-info');
-    var xMedia = dir === 'right' ? 80 : -80;
-    gsap.set(media, {opacity:0, x:xMedia});
-    gsap.set(info,  {opacity:0, x: -xMedia * 0.5});
-    ScrollTrigger.create({
-      trigger: row,
-      start: 'top 82%',
-      once: true,
-      onEnter: function(){
-        gsap.to(media, {opacity:1, x:0, duration:.7, ease:'power3.out'});
-        gsap.to(info,  {opacity:1, x:0, duration:.65, ease:'power2.out', delay:.12});
-      }
-    });
-  });
-  var vxFinale = document.querySelector('.vx-finale');
-  if(vxFinale){
-    var fText = vxFinale.querySelector('.vx-finale-text');
-    var fVid  = vxFinale.querySelector('.vx-finale-video');
-    gsap.set(fText,{opacity:0,y:40});
-    gsap.set(fVid, {opacity:0,y:40,scale:.96});
-    ScrollTrigger.create({
-      trigger:vxFinale, start:'top 84%', once:true,
-      onEnter:function(){
-        gsap.to(fText,{opacity:1,y:0,duration:.65,ease:'power2.out'});
-        gsap.to(fVid, {opacity:1,y:0,scale:1,duration:.75,ease:'power2.out',delay:.18});
+  /* ─── Horizontal scroll video section ─── */
+  var hxPin   = document.getElementById('hx-pin');
+  var hxTrack = document.querySelector('.hx-track');
+  var hxFill  = document.getElementById('hxProgress');
+  var hxHint  = document.getElementById('hxHint');
+  if(hxPin && hxTrack && window.innerWidth > 768){
+    var hxPanels = hxTrack.querySelectorAll('.hx-panel');
+    var hxTotal  = (hxPanels.length - 1) * window.innerWidth;
+
+    var hxST = ScrollTrigger.create({
+      trigger: hxPin,
+      start: 'top top',
+      end: function(){ return '+=' + hxTotal; },
+      pin: true,
+      scrub: 1.2,
+      onUpdate: function(self){
+        gsap.set(hxTrack, {x: -self.progress * hxTotal});
+        if(hxFill) hxFill.style.width = (self.progress * 100) + '%';
+        if(hxHint){
+          hxHint.style.opacity = self.progress > 0.04 ? '0' : '1';
+        }
       }
     });
   }

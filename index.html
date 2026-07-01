@@ -269,111 +269,105 @@
   </div>
 
   <!-- ═══ BLOCK 6: Video reel horizontal scroll ═══ -->
-  <!-- ═══ VIDEO SHOWCASE ═══ -->
-  <div class="vx-wrap" id="vx-wrap">
+  <!-- ═══ HORIZONTAL SCROLL VIDEO ═══ -->
+  <div class="hx-intro container">
+    <span class="hx-eyebrow">در عمل ببینید</span>
+    <h2 class="hx-intro-title">سیرا در حال اجرا</h2>
+    <p class="hx-intro-sub">اسکرول کنید و هر قابلیت را از نزدیک ببینید</p>
+  </div>
 
-    <div class="vx-header container">
-      <span class="vx-tag">در عمل ببینید</span>
-      <h2 class="vx-title">سیرا در حال اجرا</h2>
-    </div>
+  <div id="hx-pin">
+    <div class="hx-track">
 
-    <!-- Row 1: video right (RTL first col), text left — slide in from right -->
-    <div class="vx-row" data-dir="right">
-      <div class="vx-media">
-        <div class="vx-num">۰۱</div>
-        <div class="vx-video-wrap">
+      <div class="hx-panel">
+        <div class="hx-panel-text">
+          <span class="hx-ghost">۰۱</span>
+          <h3 class="hx-panel-title">مانیتورینگ<br>لحظه‌ای</h3>
+          <p class="hx-panel-desc">هر اپراتور یک کارت زنده دارد — عکس، وضعیت و مدت تماس جاری. ترانک‌های ورودی و خروجی با IP و نوع اتصال. صف تماس همزمان.</p>
+          <ul class="hx-panel-list">
+            <li>وضعیت آنلاین / مشغول / آفلاین</li>
+            <li>IP و وضعیت هر ترانک</li>
+            <li>صف تماس لحظه‌ای</li>
+          </ul>
+        </div>
+        <div class="hx-panel-media">
           <video autoplay muted loop playsinline><source src="assets/demo-4.mp4" type="video/mp4"></video>
         </div>
       </div>
-      <div class="vx-info">
-        <h3 class="vx-h3">مانیتورینگ<br>لحظه‌ای</h3>
-        <p class="vx-p">هر اپراتور یک کارت زنده دارد — عکس، وضعیت و مدت تماس جاری. ترانک‌های ورودی و خروجی با IP، نوع و وضعیت اتصال. صف تماس با Static و Dynamic Agent به‌صورت همزمان.</p>
-        <ul class="vx-list">
-          <li>وضعیت آنلاین / مشغول / آفلاین با رنگ</li>
-          <li>نمایش IP و وضعیت هر ترانک</li>
-          <li>صف تماس لحظه‌ای</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Row 2: video left, text right — slide in from left -->
-    <div class="vx-row vx-row--rev" data-dir="left">
-      <div class="vx-media">
-        <div class="vx-num">۰۲</div>
-        <div class="vx-video-wrap">
+      <div class="hx-panel hx-panel--alt">
+        <div class="hx-panel-text">
+          <span class="hx-ghost">۰۲</span>
+          <h3 class="hx-panel-title">داشبورد<br>سه‌مانیتوره</h3>
+          <p class="hx-panel-desc">وضعیت سرور، مانیتورینگ اپراتورها و نمودارهای تحلیلی — همزمان روی سه صفحه‌نمایش. دید کامل، بدون کلیک اضافه.</p>
+          <ul class="hx-panel-list">
+            <li>RAM / CPU / SWAP لحظه‌ای</li>
+            <li>مانیتورینگ کنار آمار تحلیلی</li>
+            <li>چیدمان آزاد روی صفحه‌نمایش‌ها</li>
+          </ul>
+        </div>
+        <div class="hx-panel-media">
           <video autoplay muted loop playsinline><source src="assets/demo-5.mp4" type="video/mp4"></video>
         </div>
       </div>
-      <div class="vx-info">
-        <h3 class="vx-h3">داشبورد<br>سه‌مانیتوره</h3>
-        <p class="vx-p">وضعیت سرور، منابع سیستم و نمودارهای تحلیلی — همزمان روی سه صفحه‌نمایش. برای مدیرانی که نیاز دارند همه چیز را در یک نگاه بدانند، این داشبورد طراحی شده.</p>
-        <ul class="vx-list">
-          <li>وضعیت RAM / CPU / SWAP سرور</li>
-          <li>مانیتورینگ لحظه‌ای کنار آمار</li>
-          <li>نمودارهای تحلیلی جانبی</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Row 3: video right, text left -->
-    <div class="vx-row" data-dir="right">
-      <div class="vx-media">
-        <div class="vx-num">۰۳</div>
-        <div class="vx-video-wrap">
+      <div class="hx-panel">
+        <div class="hx-panel-text">
+          <span class="hx-ghost">۰۳</span>
+          <h3 class="hx-panel-title">تحلیل صف‌های<br>تماس</h3>
+          <p class="hx-panel-desc">نمودار تعاملی مقایسه صف‌ها با تقویم شمسی. میانگین زمان انتظار، پاسخ‌داده‌شده و از‌دست‌رفته در بازه‌های دلخواه.</p>
+          <ul class="hx-panel-list">
+            <li>مقایسه همزمان چند صف</li>
+            <li>تقویم شمسی بومی</li>
+            <li>فیلتر پیشرفته بازه زمانی</li>
+          </ul>
+        </div>
+        <div class="hx-panel-media">
           <video autoplay muted loop playsinline><source src="assets/demo-2.mp4" type="video/mp4"></video>
         </div>
       </div>
-      <div class="vx-info">
-        <h3 class="vx-h3">تحلیل صف‌های<br>تماس</h3>
-        <p class="vx-p">نمودار تعاملی مقایسه صف‌ها با تقویم شمسی. میانگین زمان انتظار، تعداد پاسخ‌داده‌شده و از‌دست‌رفته در بازه‌های مختلف — هر آنچه برای بهینه‌سازی نیاز دارید.</p>
-        <ul class="vx-list">
-          <li>مقایسه همزمان چند صف</li>
-          <li>فیلتر بازه تاریخی شمسی</li>
-          <li>میانگین زمان انتظار</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Row 4: video left, text right -->
-    <div class="vx-row vx-row--rev" data-dir="left">
-      <div class="vx-media">
-        <div class="vx-num">۰۴</div>
-        <div class="vx-video-wrap">
+      <div class="hx-panel hx-panel--alt">
+        <div class="hx-panel-text">
+          <span class="hx-ghost">۰۴</span>
+          <h3 class="hx-panel-title">نمودار عملکرد<br>اپراتورها</h3>
+          <p class="hx-panel-desc">نمودارهای خطی چندگانه برای مقایسه مدت مکالمه، تعداد تماس‌ها و زمان انتظار. الگوها را کشف کنید.</p>
+          <ul class="hx-panel-list">
+            <li>نمودار خطی مقایسه‌ای</li>
+            <li>فیلتر اپراتور و صف</li>
+            <li>تفکیک روزانه / هفتگی</li>
+          </ul>
+        </div>
+        <div class="hx-panel-media">
           <video autoplay muted loop playsinline><source src="assets/demo-3.mp4" type="video/mp4"></video>
         </div>
       </div>
-      <div class="vx-info">
-        <h3 class="vx-h3">نمودار عملکرد<br>اپراتورها</h3>
-        <p class="vx-p">نمودارهای خطی چندگانه برای مقایسه مدت مکالمه، تعداد تماس‌ها و زمان انتظار. داده را به تفکیک اپراتور، صف یا بازه زمانی فیلتر کنید و الگوها را کشف کنید.</p>
-        <ul class="vx-list">
-          <li>نمودار خطی مقایسه‌ای</li>
-          <li>فیلتر اپراتور و صف</li>
-          <li>تفکیک روزانه / هفتگی</li>
-        </ul>
-      </div>
-    </div>
 
-    <!-- Row 5: full-width accent — video center, text below -->
-    <div class="vx-finale">
-      <div class="vx-finale-inner">
-        <div class="vx-finale-text">
-          <span class="vx-num vx-num--accent">۰۵</span>
-          <h3 class="vx-h3">تنظیمات سیستم<br>به زبان فارسی</h3>
-          <p class="vx-p">فرم‌های هوشمند با اعتبارسنجی خودکار، رابط RTL کامل، و دسترسی سطح‌بندی‌شده. بدون هیچ واژه انگلیسی.</p>
-          <ul class="vx-list">
+      <div class="hx-panel">
+        <div class="hx-panel-text">
+          <span class="hx-ghost">۰۵</span>
+          <h3 class="hx-panel-title">پنل مدیریت<br>کاملاً فارسی</h3>
+          <p class="hx-panel-desc">فرم‌های هوشمند با اعتبارسنجی خودکار، رابط RTL کامل و دسترسی سطح‌بندی‌شده. بدون هیچ واژه انگلیسی.</p>
+          <ul class="hx-panel-list">
             <li>فرم‌های هوشمند با validation</li>
-            <li>دسترسی سطح‌بندی‌شده کاربران</li>
-            <li>نمایش وضعیت ماژول‌ها</li>
+            <li>دسترسی سطح‌بندی‌شده</li>
+            <li>وضعیت ماژول‌ها و سرویس‌ها</li>
           </ul>
         </div>
-        <div class="vx-finale-video">
-          <div class="vx-video-wrap">
-            <video autoplay muted loop playsinline><source src="assets/demo-1.mp4" type="video/mp4"></video>
-          </div>
+        <div class="hx-panel-media">
+          <video autoplay muted loop playsinline><source src="assets/demo-1.mp4" type="video/mp4"></video>
         </div>
       </div>
+
     </div>
 
+    <!-- progress bar -->
+    <div class="hx-progress"><div class="hx-progress-fill" id="hxProgress"></div></div>
+    <!-- scroll hint -->
+    <div class="hx-hint" id="hxHint">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      اسکرول کنید
+    </div>
   </div>
 
 </section>
