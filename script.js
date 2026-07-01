@@ -160,7 +160,7 @@
     {sel:'.price-card', stagger:0.1},
     {sel:'.faq-item',   stagger:0.06},
     {sel:'.showcase-card', stagger:0.1},
-    {sel:'.ed-moment-tags span', stagger:0.05}
+    {sel:'.ed-scene-pills span', stagger:0.05}
   ];
 
   revealGroups.forEach(function(g){
@@ -177,7 +177,7 @@
   });
 
   // Single element reveals
-  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.ed-bleed-copy','.ed-overflow-text','.ed-float-text','.ed-cinema-left','.ed-wide-header','.ed-wide-p','.ed-moments-intro','.ed-moment-media','.ed-moment-info','.ed-moment-final-overlay'];
+  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.ed-bleed-copy','.ed-overflow-text','.ed-float-text','.ed-cinema-left','.ed-wide-header','.ed-wide-p','.ed-moments-intro','.ed-scene-glass','.ed-scene-finale-copy'];
   singles.forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el){
       gsap.set(el,{opacity:0,y:36});
