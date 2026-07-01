@@ -253,8 +253,9 @@ img{max-width:100%;display:block}
    after GSAP pins it (position:fixed), so only the current panel is ever visible */
 #hx-pin{position:relative;height:100vh;overflow:hidden}
 
-/* Horizontal track — must be LTR so panels flow left→right even inside an RTL page */
-.hx-track{display:flex;width:500vw;will-change:transform;direction:ltr}
+/* Horizontal track — RTL flex: panel 1 rightmost, panels 2-5 extend leftward.
+   Initial transform puts panel 1 in view; scrolling moves track right→ left. */
+.hx-track{display:flex;width:500vw;will-change:transform;direction:rtl}
 
 /* Each panel: one viewport */
 .hx-panel{width:100vw;height:100vh;display:grid;grid-template-columns:1fr 1.5fr;

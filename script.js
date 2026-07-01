@@ -230,14 +230,19 @@
     var hxPanels = hxTrack.querySelectorAll('.hx-panel');
     var hxTotal  = (hxPanels.length - 1) * window.innerWidth;
 
-    var hxST = ScrollTrigger.create({
+    // RTL layout: panel 1 is rightmost in the flex row.
+    // Start track at -hxTotal so panel 1 is visible; scroll moves it toward 0
+    // which reveals panels 2→5 entering from the left (Persian reading direction).
+    gsap.set(hxTrack, {x: -hxTotal});
+
+    ScrollTrigger.create({
       trigger: hxPin,
       start: 'top top',
-      end: function(){ return '+=' + hxTotal; },
+      end: '+=' + hxTotal,
       pin: true,
       scrub: 1.2,
       onUpdate: function(self){
-        gsap.set(hxTrack, {x: -self.progress * hxTotal});
+        gsap.set(hxTrack, {x: (self.progress - 1) * hxTotal});
         if(hxFill) hxFill.style.width = (self.progress * 100) + '%';
         if(hxHint){
           hxHint.style.opacity = self.progress > 0.04 ? '0' : '1';
