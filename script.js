@@ -160,8 +160,7 @@
     {sel:'.price-card', stagger:0.1},
     {sel:'.faq-item',   stagger:0.06},
     {sel:'.showcase-card', stagger:0.1},
-    {sel:'.sf-card',       stagger:0.12},
-    {sel:'.sv-item',       stagger:0.08}
+    {sel:'.ed-reel-item',  stagger:0.06}
   ];
 
   revealGroups.forEach(function(g){
@@ -178,7 +177,7 @@
   });
 
   // Single element reveals
-  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.showcase-hero','.sv-title'];
+  var singles = ['.sec-top','.split-text','.split-visual','.form-card','.media-frame','.hero-media','.cta-end .container','.ed-bleed-copy','.ed-overflow-text','.ed-float-text','.ed-cinema-left','.ed-wide-header','.ed-wide-p','.ed-reel-header'];
   singles.forEach(function(sel){
     document.querySelectorAll(sel).forEach(function(el){
       gsap.set(el,{opacity:0,y:36});
@@ -219,6 +218,18 @@
           }
         });
       }
+    });
+  });
+
+  /* ─── Editorial block image parallax ─── */
+  ['.ed-bleed-img', '.ed-overflow-img img', '.ed-float-img img', '.ed-cinema-img img'].forEach(function(sel){
+    document.querySelectorAll(sel).forEach(function(el){
+      gsap.to(el,{
+        yPercent: -8,
+        ease:'none',
+        scrollTrigger:{trigger:el.closest('.ed-bleed,.ed-overflow-row,.ed-float-row,.ed-cinema') || el,
+          start:'top bottom',end:'bottom top',scrub:1.5}
+      });
     });
   });
 
